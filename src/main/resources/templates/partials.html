@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+    <meta charset="UTF-8"/>
+    <title th:text="${title}"></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="../static/style/base.css" th:href="@{/style/base.css}" />
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="../static/style/js/modernizr.js" th:href="@{/style/js/modernizr.js}" ></script>
+    <script src="../static/style/js/pace.min.js" th:href="@{/style/js/pace.min.js}" ></script>
+
+
+</head>
+<body  id="top" >
+<nav th:fragment="navbar">
+    <!-- pageheader
+================================================== -->
+
+    <header class="header">
+        <div class="header__content row">
+
+            <div class="header__logo">
+                <a class="logo" href="index.html">
+                    <img src="images/logo.svg" alt="Homepage" />
+                </a>
+            </div> <!-- end header__logo -->
+
+            <ul class="header__social">
+                <li>
+                    <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                </li>
+                <li>
+                    <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                </li>
+                <li>
+                    <a href="#0"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </li>
+                <li>
+                    <a href="#0"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                </li>
+            </ul> <!-- end header__social -->
+
+            <a class="header__search-trigger" href="#0"></a>
+
+            <div class="header__search">
+
+                <form role="search" method="get" class="header__search-form" action="#">
+                    <label>
+                        <span class="hide-content">Search for:</span>
+                        <input type="search" class="search-field" placeholder="Type Keywords" value="" name="s" title="Search for:" autocomplete="off" />
+                    </label>
+                    <input type="submit" class="search-submit" value="Search" />
+                </form>
+
+                <a href="#0" title="Close Search" class="header__overlay-close">Close</a>
+
+            </div>  <!-- end header__search -->
+
+
+            <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
+
+            <nav class="header__nav-wrap">
+
+                <h2 class="header__nav-heading h6">Site Navigation</h2>
+
+                <ul class="header__nav">
+                    <li class="current"><a href="index.html" title="">Home</a></li>
+                    <li class="has-children">
+                        <a href="#0" title="">Categories</a>
+                        <ul class="sub-menu">
+                            <li><a href="category.html">Lifestyle</a></li>
+                            <li><a href="category.html">Health</a></li>
+                            <li><a href="category.html">Family</a></li>
+                            <li><a href="category.html">Management</a></li>
+                            <li><a href="category.html">Travel</a></li>
+                            <li><a href="category.html">Work</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-children">
+                        <a href="#0" title="">Blog</a>
+                        <ul class="sub-menu">
+                            <li><a href="single-video.html">Video Post</a></li>
+                            <li><a href="single-audio.html">Audio Post</a></li>
+                            <li><a href="single-gallery.html">Gallery Post</a></li>
+                            <li><a href="single-standard.html">Standard Post</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="style-guide.html" title="">Styles</a></li>
+                    <li><a href="about.html" title="">About</a></li>
+                    <li><a href="contact.html" title="">Contact</a></li>
+                </ul> <!-- end header__nav -->
+
+                <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
+
+            </nav> <!-- end header__nav-wrap -->
+
+        </div> <!-- header-content -->
+    </header> <!-- header -->
+
+</nav>
+
+<footer th:fragment="footer" class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2019 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
