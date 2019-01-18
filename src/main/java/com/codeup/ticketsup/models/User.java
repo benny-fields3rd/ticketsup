@@ -33,6 +33,9 @@ public class User {
     @Column(nullable = false , length = 100)
     private String phone;
 
+    @Column(nullable = false , length = 100)
+    private boolean isAdmin;
+
 
 
 

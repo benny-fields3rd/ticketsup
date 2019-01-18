@@ -32,6 +32,9 @@ public class Order {
     @OneToOne
     private Status status;
 
+    @OneToOne
+    private Movie movies;
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name="orders_food",
