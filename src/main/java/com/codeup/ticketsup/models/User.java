@@ -84,6 +84,10 @@ public class User {
         this.phone = phone;
     }
 
+    public void setAdmin( boolean admin ) {
+        isAdmin = admin;
+    }
+
     public int getId() {
         return id;
     }
@@ -115,4 +119,10 @@ public class User {
     public String getPhone() {
         return phone;
     }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+
 }
