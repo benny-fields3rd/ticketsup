@@ -7,11 +7,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class OrederService {
+public class OrderService {
     private final OrderRepository orderRepo;
 
 
-    public OrederService(OrderRepository orderRepo, OrderRepository orderRepo1){
+    public OrderService( OrderRepository orderRepo, OrderRepository orderRepo1){
 
         this.orderRepo = orderRepo1;
     }
@@ -24,11 +24,11 @@ public class OrederService {
         return orderRepo.findOne(id);
     }
 
-    public Order save(Order order){
+    public Order saveOrder(Order order){
         return orderRepo.save(order);
     }
 
-    public void delete(Order order){
+    public void deleteOrder(Order order){
         orderRepo.delete(order);
     }
 

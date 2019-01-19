@@ -22,7 +22,7 @@ public class User {
     private String last_name;
 
     @Column(nullable = false , length = 100)
-    private String zipcode;
+    private String zip_code;
 
     @Column(nullable = false , length = 100)
     private String email;
@@ -38,18 +38,32 @@ public class User {
 
 
 
-
+    // empty User constructor
     public User() {
     }
 
-    public User(String user_name, String first_name, String last_name, String zipcode, String email, String password, String phone) {
+    // User constructor without id and isAdmin
+    public User(String user_name, String first_name, String last_name, String zip_code, String email, String password, String phone) {
         this.user_name = user_name;
         this.first_name = first_name;
         this.last_name = last_name;
-        this.zipcode = zipcode;
+        this.zip_code = zip_code;
         this.email = email;
         this.password = password;
         this.phone = phone;
+    }
+
+    // Do we need this one? I just added id and isAdmin in the constructor
+    public User(int id, String user_name, String first_name, String last_name, String zip_code, String email, String password, String phone, boolean isAdmin) {
+        this.id = id;
+        this.user_name = user_name;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.zip_code = zip_code;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.isAdmin = isAdmin;
     }
 
     public void setId(int id) {
@@ -68,8 +82,8 @@ public class User {
         this.last_name = last_name;
     }
 
-    public void setZipcode(String zipcode) {
-        this.zipcode = zipcode;
+    public void setZip_code(String zip_code) {
+        this.zip_code = zip_code;
     }
 
     public void setEmail(String email) {
@@ -104,8 +118,8 @@ public class User {
         return last_name;
     }
 
-    public String getZipcode() {
-        return zipcode;
+    public String getZip_code() {
+        return zip_code;
     }
 
     public String getEmail() {
