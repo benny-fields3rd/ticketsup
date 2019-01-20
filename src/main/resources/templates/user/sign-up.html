@@ -11,30 +11,27 @@
             <h5 class="card-title">New Profile</h5>
 
             <!-- Suggest this be in a container and then a card-->
-            <form class="card-text" action="/user/register" method="post" th:object="${user}">
+            <form class="card-text" th:action="@{/sign-up}" method="post" th:object="${user}">
                 <label>First Name:</label>
                 <input th:field="*{first_name}" />
                 <br />
                 <label>Last Name:</label>
-                <input th:field="*{body}"/>
+                <input th:field="*{last_name}"/>
                 <br />
                 <label>Phone Number:</label>
-                <input th:field="*{title}" />
+                <input th:field="*{phone}" />
                 <br />
                 <label>Email:</label>
-                <input th:field="*{body}"/>
+                <input th:field="*{email}"/>
                 <br />
                 <label>Zipcode:</label>
-                <input th:field="*{zipcode}" />
+                <input th:field="*{zip_code}" />
                 <br />
                 <label>Username:</label>
                 <input th:field="*{username}"/>
                 <br />
                 <label>Password:</label>
-                <input th:field="*{password}"/>
-                <br />
-                <label>Verify Password:</label>
-                <input th:field="*{password}"/>
+                <input type="password" th:field="*{password}"/>
                 <br />
                 <button type="submit">Register</button>
             </form>

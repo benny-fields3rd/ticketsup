@@ -13,7 +13,7 @@ public class User {
     private int id;
 
     @Column(nullable = false , length = 100)
-    private String user_name;
+    private String username;
 
     @Column(nullable = false , length = 100)
     private String first_name;
@@ -42,9 +42,21 @@ public class User {
     public User() {
     }
 
+    public User(User copy) {
+        id = copy.id; // This line is SUPER important! Many things won't work if it's absent
+        email = copy.email;
+        first_name = copy.first_name;
+        last_name = copy.last_name;
+        zip_code = copy.zip_code;
+        phone = copy.phone;
+        username = copy.username;
+        password = copy.password;
+        isAdmin = copy.isAdmin;
+    }
+
     // User constructor without id and isAdmin
-    public User(String user_name, String first_name, String last_name, String zip_code, String email, String password, String phone) {
-        this.user_name = user_name;
+    public User(String username, String first_name, String last_name, String zip_code, String email, String password, String phone) {
+        this.username = username;
         this.first_name = first_name;
         this.last_name = last_name;
         this.zip_code = zip_code;
@@ -54,9 +66,9 @@ public class User {
     }
 
     // Do we need this one? I just added id and isAdmin in the constructor
-    public User(int id, String user_name, String first_name, String last_name, String zip_code, String email, String password, String phone, boolean isAdmin) {
+    public User(int id, String username, String first_name, String last_name, String zip_code, String email, String password, String phone, boolean isAdmin) {
         this.id = id;
-        this.user_name = user_name;
+        this.username = username;
         this.first_name = first_name;
         this.last_name = last_name;
         this.zip_code = zip_code;
@@ -70,8 +82,8 @@ public class User {
         this.id = id;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setusername(String username) {
+        this.username = username;
     }
 
     public void setFirst_name(String first_name) {
@@ -106,8 +118,8 @@ public class User {
         return id;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getusername() {
+        return username;
     }
 
     public String getFirst_name() {
