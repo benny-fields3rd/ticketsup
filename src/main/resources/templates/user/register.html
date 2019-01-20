@@ -9,6 +9,8 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">New Profile</h5>
+
+            <!-- Suggest this be in a container and then a card-->
             <form class="card-text" action="/user/register" method="post" th:object="${user}">
                 <label>First Name:</label>
                 <input th:field="*{first_name}" />
