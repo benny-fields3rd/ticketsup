@@ -13,7 +13,7 @@ public class User {
     private int id;
 
     @Column(nullable = false , length = 100)
-    private String user_name;
+    private String username;
 
     @Column(nullable = false , length = 100)
     private String first_name;
@@ -22,7 +22,7 @@ public class User {
     private String last_name;
 
     @Column(nullable = false , length = 100)
-    private String zipcode;
+    private String zip_code;
 
     @Column(nullable = false , length = 100)
     private String email;
@@ -38,26 +38,52 @@ public class User {
 
 
 
-
+    // empty User constructor
     public User() {
     }
 
-    public User(String user_name, String first_name, String last_name, String zipcode, String email, String password, String phone) {
-        this.user_name = user_name;
+    public User(User copy) {
+        id = copy.id; // This line is SUPER important! Many things won't work if it's absent
+        email = copy.email;
+        first_name = copy.first_name;
+        last_name = copy.last_name;
+        zip_code = copy.zip_code;
+        phone = copy.phone;
+        username = copy.username;
+        password = copy.password;
+        isAdmin = copy.isAdmin;
+    }
+
+    // User constructor without id and isAdmin
+    public User(String username, String first_name, String last_name, String zip_code, String email, String password, String phone) {
+        this.username = username;
         this.first_name = first_name;
         this.last_name = last_name;
-        this.zipcode = zipcode;
+        this.zip_code = zip_code;
         this.email = email;
         this.password = password;
         this.phone = phone;
+    }
+
+    // Do we need this one? I just added id and isAdmin in the constructor
+    public User(int id, String username, String first_name, String last_name, String zip_code, String email, String password, String phone, boolean isAdmin) {
+        this.id = id;
+        this.username = username;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.zip_code = zip_code;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.isAdmin = isAdmin;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setusername(String username) {
+        this.username = username;
     }
 
     public void setFirst_name(String first_name) {
@@ -68,8 +94,8 @@ public class User {
         this.last_name = last_name;
     }
 
-    public void setZipcode(String zipcode) {
-        this.zipcode = zipcode;
+    public void setZip_code(String zip_code) {
+        this.zip_code = zip_code;
     }
 
     public void setEmail(String email) {
@@ -84,12 +110,16 @@ public class User {
         this.phone = phone;
     }
 
+    public void setAdmin( boolean admin ) {
+        isAdmin = admin;
+    }
+
     public int getId() {
         return id;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getusername() {
+        return username;
     }
 
     public String getFirst_name() {
@@ -100,8 +130,8 @@ public class User {
         return last_name;
     }
 
-    public String getZipcode() {
-        return zipcode;
+    public String getZip_code() {
+        return zip_code;
     }
 
     public String getEmail() {
@@ -115,4 +145,10 @@ public class User {
     public String getPhone() {
         return phone;
     }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+
 }
