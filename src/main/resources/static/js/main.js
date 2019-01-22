@@ -128,6 +128,7 @@ function getMovie() {
             ${results.overview}
           </div>
         </div>
+        
       `;
             $('#movie').html(output);
         },
