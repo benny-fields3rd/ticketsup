@@ -14,6 +14,8 @@ $(document).ready(() => {
                 type : "get",
                 success : function (result) {
 
+                    console.log(result);
+
                     let firstPoster = result.results[0].backdrop_path ;
                     let secPoster = result.results[1].backdrop_path ;
                     let thirdPoster = result.results[2].backdrop_path ;
