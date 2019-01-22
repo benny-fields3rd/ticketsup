@@ -6,9 +6,10 @@
     <div th:replace="partials::navbar"></div>
 
     <div class="container">
-
         <!--//MOVIE CONTENT WILL BE DISPLAYED IN THIS CONTAINER//-->
+        <div id="movie" class="well">
 
+        </div>
     </div>
 
     <div class="container">
@@ -16,17 +17,19 @@
             <div class="col s6">6-columns (one-half)</div>
             <div class="col s6">6-columns (one-half)</div>
             <!--//WILL HAVE THE DESCRIPTION ADDED BELOW THE MOVIE INFO AS WELL AS THE REVIEWS//-->
-
         </div>
     </div>
 
     <div class="container">
         <div class="row">
             <!--CALENDER AND DATE WILL SHOW UP HERE-->
-            <input type="text" placeholder="Enter Date" class="datepicker">
+            <input type="text" placeholder="Enter Date" class="datepicker" />
         </div>
     </div>
 
+    <footer th:replace="partials :: footer" />
+
+    <!--<script src="../../static/js/main.js" ></script>-->
 
 </body>
 </html>
