@@ -139,4 +139,16 @@ function getMovie() {
 
 }
 getMovie()
+
+    //THIS IS FOR THE SELECT DATE OF THE MOVIE//
+    $(document).ready(function(){
+        $('.datepicker').datepicker();
+    });
+
+    //THIS IS FOR THE SELECT TIME OF THE MOVIE//
+    $(document).ready(function(){
+        $('select').formSelect();
+    });
+
+
 });
