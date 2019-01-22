@@ -4,7 +4,6 @@
 <head th:replace="partials::head('Food Menu')"></head>
 <body>
     <div th:replace="partials::navbar"></div>
-<main role="main" >
     <div class="container">
         <h1>Food Orders</h1>
         <!-- Below this, food selection -->
@@ -57,14 +56,12 @@
                     </div>
                     <div class="card-action input-field">
                         <select>
-                            <option value="" class="disabled selected">Choose your option</option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="opel">Opel</option>
+                            <option value="audi">Audi</option>
                         </select>
-                        <label>Materialize Select</label>
                     </div>
-
                 </div> <!-- close card -->
             </div>
 
@@ -134,8 +131,8 @@
 
         </div><!-- closes main row -->
 
-    <div th:replace="partials::footer"></div>
     </div><!-- /.container -->
-</main>
+    <div th:replace="partials::footer"></div>
+
 </body>
 </html>

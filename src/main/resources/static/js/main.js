@@ -136,7 +136,7 @@ function getMovie() {
     })
 
 }
-getMovie()
+getMovie();
 
     //THIS IS FOR THE SELECT DATE OF THE MOVIE//
     $(document).ready(function(){
@@ -148,5 +148,5 @@ getMovie()
         $('select').formSelect();
     });
 
-
+    console.log('kkk');
 });
