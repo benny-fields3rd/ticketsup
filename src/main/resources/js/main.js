@@ -14,6 +14,8 @@ $(document).ready(() => {
                 type : "get",
                 success : function (result) {
 
+                    console.log(result);
+
                     let firstPoster = result.results[0].backdrop_path ;
                     let secPoster = result.results[1].backdrop_path ;
                     let thirdPoster = result.results[2].backdrop_path ;
@@ -46,10 +48,6 @@ $(document).ready(() => {
             })
 
 
-        }
-
-        function clicked() {
-            console.log("clik");
         }
 
 
@@ -139,4 +137,16 @@ function getMovie() {
 
 }
 getMovie()
+
+    //THIS IS FOR THE SELECT DATE OF THE MOVIE//
+    $(document).ready(function(){
+        $('.datepicker').datepicker();
+    });
+
+    //THIS IS FOR THE SELECT TIME OF THE MOVIE//
+    $(document).ready(function(){
+        $('select').formSelect();
+    });
+
+
 });

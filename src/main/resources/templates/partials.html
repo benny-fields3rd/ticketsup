@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head th:fragment="head(title)">
     <meta charset="UTF-8"/>
     <title th:text="${title}"></title>
@@ -19,14 +19,25 @@
     <!-- pageheader
 ================================================== -->
 
+    <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Logo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="sass.html">Sass</a></li>
+            <li>
+            <div class="button-group" sec:authorize="!isFullyAuthenticated()">
+                <a href="/login">Login</a>
+            </div>
+            </li>
+            <li>
 
-
-            <nav class="header__nav-wrap">
-
-                <h2 class="header__nav-heading h6">Site Navigation</h2>
-
-            </nav> <!-- end header__nav-wrap -->
-
+            <div class="button-group" sec:authorize="isFullyAuthenticated()">
+                <form th:action="@{/logout}" th:method="post">
+                    <button>Logout</button>
+                </form>
+            </div>
+            </li>
+        </ul>
+    </div>
 
 </nav>
 
