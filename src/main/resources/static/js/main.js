@@ -50,10 +50,6 @@ $(document).ready(() => {
 
         }
 
-        function clicked() {
-            console.log("clik");
-        }
-
 
         function getUpcomingMovie(){
             $.ajax({
