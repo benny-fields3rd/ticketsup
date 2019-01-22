@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials::head('Create Profile')"></head>
+<body>
+    <div th:replace="partials::navbar"></div>
+<main role="main" >
+    <div class="container">
+        <h5>Order Food</h5>
+        <!-- Below this, food selection -->
+        <div class="row">
+        <div class="col s6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">Popcorn</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">Drinks</div>
+                </div>
+            </div>
+        </div>
+        </div><!-- closes main row -->
+        <!-- Meal Selections -->
+        <div class="row">
+            <div class="col s6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">Pizza</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">Burgers</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">Hot Dogs</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">Nachos</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">Fries</div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- closes main row -->
+
+    <div th:replace="partials::footer"></div>
+    </div><!-- /.container -->
+</main>
+</body>
+</html>

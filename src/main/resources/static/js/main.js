@@ -31,9 +31,9 @@ $(document).ready(() => {
                     for (let i = 0 ; i < 15 ; i++){
                         let imgLink = result.results[i].poster_path;
                     console.log(imgLink);
-                        htmlForNowShowingMovies += `<div class="col m4 l3">
+                        htmlForNowShowingMovies += `<div id="${result.results[i].id}" class="col m4 l3">
                                     <img src='${imgPath + imgLink}'  class="imgPoster">
-                                    <a onclick="movieSelected('${result.results[i].id}')" class="waves-effect waves-light grey darken-4 btn" href="#">Book Now</a>
+                                    <a class="waves-effect waves-light grey darken-4 btn movieBtn" >Movie Details</a>
                                 </div>
                         
                         `
@@ -50,6 +50,10 @@ $(document).ready(() => {
 
         }
 
+        function clicked() {
+            console.log("clik");
+        }
+
 
         function getUpcomingMovie(){
             $.ajax({
@@ -62,11 +66,10 @@ $(document).ready(() => {
 
                         let imgLink = result.results[i].poster_path;
                         console.log(imgLink);
-                        htmlForUpComingMovies += `<div class="col m4 l3">
+                        htmlForUpComingMovies += `<div  id="${result.results[i].id}" class="col m4 l3">
                                     <img src='${imgPath + imgLink}'  class="imgPoster">
-                                    <a onclick="movieSelected('${result.results[i].id}')" class="waves-effect waves-light grey darken-4 btn" href="#">Movie Details</a>
+                                    <a class="waves-effect waves-light grey darken-4 btn movieBtn"  >Movie Details</a>
                                 </div>
-                        
                         `
 
                     }
@@ -78,60 +81,64 @@ $(document).ready(() => {
                     console.log("Error ${er}");
                 }
             })
+
+
         }
         getTrendingMovie();
         getUpcomingMovie();
 
+    $(document).on('click', '.movieBtn', function(){
+        let id = $(this).parent().prop("id");
+        console.log(id);
+        sessionStorage.setItem('movieId', id);
+        window.location = '/movie';
+        return false;
+    });
+// function movieSelected(id){
+//     sessionStorage.setItem('movieId', id);
+//     window.location = 'moviepage.html';
+//     return false;
+// }
 
-
-
-function movieSelected(id){
-    sessionStorage.setItem('movieId', id);
-    window.location = 'movie.html';
-    return false;
-}
 
 function getMovie() {
     let movieId = sessionStorage.getItem('movieId');
 
-    axios.get('http://www.omdbapi.com?apikey=daef43c2&i=' + movieId)
-        .then((response) => {
-            console.log(response);
-            let movie = response.data;
-
+    $.ajax({
+        url: ('https://api.themoviedb.org/3/movie/'+ movieId + '?api_key=' + apiKey + '&language=en-US') ,
+        type: "get",
+        success: function (results) {
+            console.log(results);
             let output = `
         <div class="row">
           <div class="col-md-4">
-            <img src="${movie.Poster}" class="thumbnail">
+            <img src="${imgPath + results.poster_path}" class="thumbnail">
           </div>
           <div class="col-md-8">
-            <h2>${movie.Title}</h2>
+            <h2>${results.title}</h2>
             <ul class="list-group">
-              <li class="list-group-item"><strong>Genre:</strong> ${movie.Genre}</li>
-              <li class="list-group-item"><strong>Released:</strong> ${movie.Released}</li>
-              <li class="list-group-item"><strong>Rated:</strong> ${movie.Rated}</li>
-              <li class="list-group-item"><strong>IMDB Rating:</strong> ${movie.imdbRating}</li>
-              <li class="list-group-item"><strong>Director:</strong> ${movie.Director}</li>
-              <li class="list-group-item"><strong>Writer:</strong> ${movie.Writer}</li>
-              <li class="list-group-item"><strong>Actors:</strong> ${movie.Actors}</li>
+              <li class="list-group-item"><strong>Genre:</strong> ${results.genres[0].name}</li>
+              <li class="list-group-item"><strong>Released:</strong> ${results.release_date}</li>
+              <li class="list-group-item"><strong>Rated:</strong> ${results.vote_average}</li>
+              <li class="list-group-item"><strong>Production Company:</strong> ${results.production_companies[0].name}</li>
             </ul>
           </div>
         </div>
         <div class="row">
           <div class="well">
             <h3>Plot</h3>
-            ${movie.Plot}
-            <hr>
-            <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
-            <a href="index.html" class="btn btn-default">Go Back To Search</a>
+            ${results.overview}
           </div>
         </div>
+        
       `;
-
             $('#movie').html(output);
-        })
-        .catch((err) => {
-            console.log(err);
-        })
+        },
+        error : function (er) {
+            console .log("Error ${er}");
+        }
+    })
+
 }
+getMovie()
 });
