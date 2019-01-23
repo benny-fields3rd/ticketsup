@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class SeatController {
 
     @GetMapping("/seat-selection")
-    public String seat() {
-        return "seat_selection";
+
+    public String pickSeat() {
+        return "user/seat_selection";
     }
 }
