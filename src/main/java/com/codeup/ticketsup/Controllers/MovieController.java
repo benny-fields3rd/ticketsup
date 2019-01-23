@@ -1,6 +1,7 @@
 package com.codeup.ticketsup.Controllers;
 
 import com.codeup.ticketsup.models.Movie;
+import com.codeup.ticketsup.models.Order;
 import com.codeup.ticketsup.models.Users;
 import com.codeup.ticketsup.services.MovieService;
 import com.codeup.ticketsup.services.OrderService;
@@ -14,19 +15,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class MovieController {
 
 
-    private MovieService movieService;
+    private OrderService orderService;
     private Users userRepo;
 
 
 
     @GetMapping("/movie")
     public String movie(Model model) {
-        model.addAttribute("movie" ,new Movie());
+        model.addAttribute("order" ,new Order());
         return "ticketOrders/moviepage";
     }
     @PostMapping("/movie")
-    public String saveNewPost(@ModelAttribute Movie movie) {
-        movieService.create(movie);
+    public String saveNewOrder(@ModelAttribute Movie movie) {
         return "redirect:/";
     }
 
