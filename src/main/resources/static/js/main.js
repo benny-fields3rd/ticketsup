@@ -13,14 +13,10 @@ $(document).ready(() => {
                 url : "https://api.themoviedb.org/3/trending/movie/week?api_key="+ apiKey,
                 type : "get",
                 success : function (result) {
-
-                    console.log(result);
-
                     let firstPoster = result.results[0].backdrop_path ;
                     let secPoster = result.results[1].backdrop_path ;
                     let thirdPoster = result.results[2].backdrop_path ;
 
-                        console.log(result.results[0]);
                     $('#firstPoster').attr("src", imgPath + firstPoster);
 
                     $('#secPoster').attr("src", imgPath + secPoster);
@@ -29,9 +25,11 @@ $(document).ready(() => {
 
                     let htmlForNowShowingMovies = `<div class="row nowShowing">`;
                     for (let i = 0 ; i < 15 ; i++){
+                        let movieId = result.results[i].id;
                         let imgLink = result.results[i].poster_path;
-                    console.log(imgLink);
-                        htmlForNowShowingMovies += `<div id="${result.results[i].id}" class="col m4 l3">
+                        console.log(movieId);
+
+                        htmlForNowShowingMovies += `<div id="${movieId}" class="col m4 l3">
                                     <img src='${imgPath + imgLink}'  class="imgPoster">
                                     <a class="waves-effect waves-light grey darken-4 btn movieBtn" >Movie Details</a>
                                 </div>
@@ -61,7 +59,6 @@ $(document).ready(() => {
                     for (let i = 0 ; i < 15 ; i++){
 
                         let imgLink = result.results[i].poster_path;
-                        console.log(imgLink);
                         htmlForUpComingMovies += `<div  id="${result.results[i].id}" class="col m4 l3">
                                     <img src='${imgPath + imgLink}'  class="imgPoster">
                                     <a class="waves-effect waves-light grey darken-4 btn movieBtn"  >Movie Details</a>
@@ -112,12 +109,17 @@ function getMovie() {
           </div>
           <div class="col-md-8">
             <h2>${results.title}</h2>
+            <form action="/movie" method="post" th:object="${movie}">
             <ul class="list-group">
               <li class="list-group-item"><strong>Genre:</strong> ${results.genres[0].name}</li>
               <li class="list-group-item"><strong>Released:</strong> ${results.release_date}</li>
               <li class="list-group-item"><strong>Rated:</strong> ${results.vote_average}</li>
               <li class="list-group-item"><strong>Production Company:</strong> ${results.production_companies[0].name}</li>
+              <li class="list-group-item"  th:field="*{tmdb_id}" >${movieId}</li>
+              <li>IsActive</li>
             </ul>
+            </form>
+            <button type="submit"></button>
           </div>
         </div>
         <div class="row">
