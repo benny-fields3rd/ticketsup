@@ -8,12 +8,12 @@ import java.util.List;
 
 @Service
 public class OrderService {
+
     private final OrderRepository orderRepo;
 
 
-    public OrderService( OrderRepository orderRepo, OrderRepository orderRepo1){
-
-        this.orderRepo = orderRepo1;
+    public OrderService( OrderRepository orderRepo){
+        this.orderRepo = orderRepo;
     }
 
     public List<Order> allOrders(){
