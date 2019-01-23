@@ -19,9 +19,6 @@ public class Order {
     @Column(nullable = false , length = 100)
     private String QR_code;
 
-    @Column(nullable = false , length = 100)
-    private int movie_id;
-
     private int total_tickets;
 
     private String movie_time;
