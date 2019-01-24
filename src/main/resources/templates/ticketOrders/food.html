@@ -7,7 +7,7 @@
     <div class="container">
         <h1>Food Orders</h1>
         <!-- Below this, food selection -->
-        <div class="row">
+        <div class="row"> <!-- top row -->
             <div class="col s12 m4">
                 <div class="card">
                     <div class="card-image">
@@ -15,11 +15,20 @@
                         <span CLASS="card-title">Popcorn</span>
                     </div>
                     <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
+                        <p>Don't forget your popcorn! One size only, Large. Grab your bucket or more!</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">This is a link</a>
+                        <div class="input-field">
+                            <select>
+                                <option value="" class="disabled selected">Choose your quantity</option>
+                                <option value="popcorn1">1</option>
+                                <option value="popcorn2">2</option>
+                                <option value="popcorn3">3</option>
+                                <option value="popcorn4">4</option>
+                                <option value="popcorn5">5</option>
+                            </select>
+                            <label>One size: Large</label>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -27,7 +36,7 @@
             <div class="col s12 m4">
                 <div class="card">
                     <div class="card-image">
-                        <img th:src="@{/img/drinks.png}" alt="Fountain Drinks"/>
+                        <img th:src="@{/img/drinks.jpg}" alt="Fountain Drinks"/>
                         <span CLASS="card-title">Drinks</span>
                     </div>
                     <div class="card-content">
@@ -37,12 +46,14 @@
                     <div class="card-action">
                         <div class="input-field">
                             <select>
-                                <option value="" class="disabled selected">Choose your option</option>
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
-                                <option value="3">Option 3</option>
+                                <option value="" class="disabled selected">Choose your quantity</option>
+                                <option value="drinks1">1</option>
+                                <option value="drinks2">2</option>
+                                <option value="drinks3">3</option>
+                                <option value="drinks4">4</option>
+                                <option value="drinks5">5</option>
                             </select>
-                            <label>Materialize Select</label>
+                            <label>One size: Large</label>
                         </div>
                     </div>
                 </div>
@@ -50,32 +61,33 @@
 
         </div> <!-- closes top row -->
 
-        <div class="row">
+        <div class="row"> <!-- bottom row -->
 
             <div class="col s12 m4">
                 <div class="card">
                     <div class="card-image">
-                        <img th:src="@{/img/cheeseburger.jpg}" alt="Burgers"/>
+                        <img th:src="@{/img/cheeseburger.jpg}" alt="french fries"/>
                         <span CLASS="card-title">Burgers</span>
                     </div>
                     <div class="card-content">
                         <p>I am a very simple card. I am good at containing small bits of information.
                             I am convenient because I require little markup to use effectively.</p>
                     </div>
-                    <div class="card-content">
+                    <div class="card-action">
                         <div class="input-field">
                             <select>
-                                <option value="" class="disabled selected">Choose your option</option>
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
-                                <option value="3">Option 3</option>
+                                <option value="" class="disabled selected">Choose your quantity</option>
+                                <option value="burger1">1</option>
+                                <option value="burger2">2</option>
+                                <option value="burger3">3</option>
+                                <option value="burger4">4</option>
+                                <option value="burger5">5</option>
                             </select>
-                            <label>Materialize Select</label>
+                            <label>One size: 1/4 pounder</label>
                         </div>
                     </div>
-                    </div>
-                </div> <!-- close card -->
-
+                </div>
+            </div>
 
             <div class="col s12 m4">
                 <div class="card">
@@ -90,12 +102,14 @@
                     <div class="card-action">
                         <div class="input-field">
                             <select>
-                                <option value="" class="disabled selected">Choose your option</option>
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
-                                <option value="3">Option 3</option>
+                                <option value="" class="disabled selected">Choose your quantity</option>
+                                <option value="fry1">1</option>
+                                <option value="fry2">2</option>
+                                <option value="fry3">3</option>
+                                <option value="fry4">4</option>
+                                <option value="fry5">5</option>
                             </select>
-                            <label>Materialize Select</label>
+                            <label>One size: Large</label>
                         </div>
                     </div>
                 </div>
@@ -114,12 +128,14 @@
                     <div class="card-action">
                         <div class="input-field">
                             <select>
-                                <option value="" class="disabled selected">Choose your option</option>
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
-                                <option value="3">Option 3</option>
+                                <option value="" class="disabled selected">Choose your quantity</option>
+                                <option value="pizza1">1</option>
+                                <option value="pizza2">2</option>
+                                <option value="pizza3">3</option>
+                                <option value="pizza4">4</option>
+                                <option value="pizza5">5</option>
                             </select>
-                            <label>Materialize Select</label>
+                            <label>One size: Personal</label>
                         </div>
                     </div>
                 </div>
@@ -138,14 +154,15 @@
                     <div class="card-action">
                         <div class="input-field">
                             <select>
-                                <option value="" class="disabled selected">Choose your option</option>
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
-                                <option value="3">Option 3</option>
+                                <option value="" class="disabled selected">Choose your quantity</option>
+                                <option value="hotdog1">1</option>
+                                <option value="hotdog2">2</option>
+                                <option value="hotdog3">3</option>
+                                <option value="hotdog4">4</option>
+                                <option value="hotdog5">5</option>
                             </select>
-                            <label>Materialize Select</label>
+                            <label>One size: Bun sized</label>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -163,18 +180,20 @@
                     <div class="card-action">
                         <div class="input-field">
                             <select>
-                                <option value="" class="disabled selected">Choose your option</option>
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
-                                <option value="3">Option 3</option>
+                                <option value="" class="disabled selected">Choose your quantity</option>
+                                <option value="nacho1">1</option>
+                                <option value="nacho2">2</option>
+                                <option value="nacho3">3</option>
+                                <option value="nacho4">4</option>
+                                <option value="nacho5">5</option>
                             </select>
-                            <label>Materialize Select</label>
+                            <label>One size: Large</label>
                         </div>
                     </div>
                 </div>
             </div>
 
-        </div><!-- closes main row -->
+        </div><!-- closes bottom row -->
 
     </div><!-- /.container -->
     <div th:replace="partials::footer"></div>
