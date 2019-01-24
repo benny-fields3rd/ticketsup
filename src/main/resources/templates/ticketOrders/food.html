@@ -11,7 +11,7 @@
             <div class="col s12 m4">
                 <div class="card">
                     <div class="card-image">
-                        <img src="/static/img/popcorn.jpeg" alt="Popcorn"/>
+                        <img th:src="@{/img/popcorn.jpg}" alt="Popcorn"/>
                         <span CLASS="card-title">Popcorn</span>
                     </div>
                     <div class="card-content">
@@ -27,7 +27,7 @@
             <div class="col s12 m4">
                 <div class="card">
                     <div class="card-image">
-                        <img src="/static/img/drinks.jpg" alt="Fountain Drinks"/>
+                        <img th:src="@{/img/drinks.png}" alt="Fountain Drinks"/>
                         <span CLASS="card-title">Drinks</span>
                     </div>
                     <div class="card-content">
@@ -47,28 +47,22 @@
             <div class="col s12 m4">
                 <div class="card">
                     <div class="card-image">
-                        <img th:src="@{static/img/cheeseburger.jpg}" alt="Burgers"/>
+                        <img th:src="@{/img/cheeseburger.jpg}" alt="Burgers"/>
                         <span CLASS="card-title">Burgers</span>
                     </div>
                     <div class="card-content">
                         <p>I am a very simple card. I am good at containing small bits of information.
                             I am convenient because I require little markup to use effectively.</p>
                     </div>
-                    <div class="card-action input-field">
-                        <select>
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="opel">Opel</option>
-                            <option value="audi">Audi</option>
-                        </select>
+
                     </div>
                 </div> <!-- close card -->
-            </div>
+
 
             <div class="col s12 m4">
                 <div class="card">
                     <div class="card-image">
-                        <img src="" alt="french fries"/>
+                        <img th:src="@{/img/fries.jpg}" alt="french fries"/>
                         <span CLASS="card-title">Fries</span>
                     </div>
                     <div class="card-content">
@@ -84,7 +78,7 @@
             <div class="col s12 m4">
                 <div class="card">
                     <div class="card-image">
-                        <img src="/static/img/pizza.jpg" alt="Pizza"/>
+                        <img th:src="@{/img/pizza.jpg}" alt="Pizza"/>
                         <span CLASS="card-title">Pizza</span>
                     </div>
                     <div class="card-content">
@@ -100,7 +94,7 @@
             <div class="col s12 m4">
                 <div class="card">
                     <div class="card-image">
-                        <img src="/static/img/hotdog.png" alt="Hot Dog"/>
+                        <img th:src="@{/img/hotdogs.jpg}" alt="Hot Dog"/>
                         <span CLASS="card-title">Hot Dogs</span>
                     </div>
                     <div class="card-content">
@@ -108,7 +102,17 @@
                             I am convenient because I require little markup to use effectively.</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">This is a link</a>
+                        <a class='dropdown-trigger btn' id="dropdown-trigger" href='#' data-target='dropdown1'>Drop Me!</a>
+
+                        <!-- Dropdown Structure -->
+                        <ul id='dropdown1' class='dropdown-content'>
+                            <li><a href="#!">one</a></li>
+                            <li><a href="#!">two</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="#!">three</a></li>
+                            <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+                            <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -116,7 +120,7 @@
             <div class="col s12 m4">
                 <div class="card">
                     <div class="card-image">
-                        <img src="/static/img/nachos.jpg" alt="Nachos"/>
+                        <img th:src="@{/img/nachos.jpg}" alt="Nachos"/>
                         <span CLASS="card-title">Nachos</span>
                     </div>
                     <div class="card-content">
