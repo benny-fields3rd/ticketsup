@@ -11,6 +11,8 @@ public class Food {
     @GeneratedValue
     private int id;
 
+    private int quantity;
+
     private String name;
 
     private Double price;
