@@ -33,9 +33,8 @@
                 <label>Please select a time</label>
             </div>
             <div class="input-field col s4">
-                <select th:field="*{}">
-                    <option value="" class="disabled selected">Quantity</option>
-                    <option value="1">1</option>
+                <select th:field="*{total_tickets}">
+                    <option class="disabled selected" value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
