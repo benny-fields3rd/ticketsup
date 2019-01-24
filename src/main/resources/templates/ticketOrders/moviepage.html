@@ -21,7 +21,7 @@
         </div>
 
         <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s8">
                 <select th:field="*{movie_time}">
                     <option value="" class="disabled selected">Choose your option</option>
                     <option value="1">8:02am</option>
@@ -32,7 +32,22 @@
                 </select>
                 <label>Please select a time</label>
             </div>
+            <div class="input-field col s4">
+                <select th:field="*{}">
+                    <option value="" class="disabled selected">Quantity</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="5">6</option>
+                    <option value="5">7</option>
+                    <option value="5">8</option>
+                </select>
+                <label>Please select amount</label>
+            </div>
         </div>
+
         <button type="submit">next</button>
         </form>
 
