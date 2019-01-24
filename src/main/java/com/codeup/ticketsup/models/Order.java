@@ -32,6 +32,16 @@ public class Order {
     @OneToOne
     private Movie movies;
 
+
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name="order_seats",
+            joinColumns={@JoinColumn(name="order_id")},
+            inverseJoinColumns={@JoinColumn(name="seat_id")}
+    )
+    private List<Seat> seats;
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name="orders_food",
