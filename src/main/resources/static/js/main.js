@@ -1,7 +1,7 @@
 
 $(document).ready(() => {
 
-         $('.slider').slider();
+    $('.slider').slider();
     $('.tabs').tabs();
 
 
@@ -109,7 +109,6 @@ function getMovie() {
           </div>
           <div class="col-md-8">
             <h2>${results.title}</h2>
-            <form action="/movie" method="post" th:object="${movie}">
             <ul class="list-group">
               <li class="list-group-item"><strong>Genre:</strong> ${results.genres[0].name}</li>
               <li class="list-group-item"><strong>Released:</strong> ${results.release_date}</li>
