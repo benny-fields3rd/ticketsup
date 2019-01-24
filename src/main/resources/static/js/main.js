@@ -146,6 +146,10 @@ getMovie();
     $(document).ready(function(){
         $('select').formSelect();
     });
+    // For drop down buttons in food orders
+
+    $('.dropdown-trigger').dropdown();
+
 
     console.log('kkk');
 });
