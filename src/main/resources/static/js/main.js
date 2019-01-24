@@ -148,9 +148,11 @@ getMovie();
     $(document).ready(function(){
         $('select').formSelect();
     });
-    // For drop down buttons in food orders
 
-    $('.dropdown-trigger').dropdown();
+    // For drop down buttons in food orders
+    $(document).ready(function(){
+        $('select').formSelect();
+    });
 
 
     console.log('kkk');
