@@ -7,27 +7,22 @@
 
     <div class="container">
         <!--//MOVIE CONTENT WILL BE DISPLAYED IN THIS CONTAINER//-->
-        <!--<form action="/posts/create" method="post" th:object="${order}">-->
+      <form th:action="@{/order}" th:method="post" th:object="${order}">
         <div id="movie" class="well">
 
         </div>
-
     <h2>Select Date and Time</h2>
         <div class="row">
             <div class="col s8">
             <!--CALENDER AND DATE WILL SHOW UP HERE-->
-            <input type="text" placeholder="Select Date" class="datepicker" />
+            <input th:field="*{order_date}" type="text" placeholder="Select Date" class="datepicker" />
             </div>
 
-            <!--COULD USE THIS FOR A ADVERTISEMENT SECTION IN OUR APP!!-->
-            <!--<div class="col s4">-->
-                <!--<img src="https://via.placeholder.com/300" alt="advertisement" />-->
-            <!--</div>-->
         </div>
 
         <div class="row">
             <div class="input-field col s12">
-                <select>
+                <select th:field="*{movie_time}">
                     <option value="" class="disabled selected">Choose your option</option>
                     <option value="1">8:02am</option>
                     <option value="2">11:20am</option>
@@ -38,8 +33,8 @@
                 <label>Please select a time</label>
             </div>
         </div>
-        <!--</form>/**/-->
-
+        <button type="submit">next</button>
+        </form>
 
 
         </div>

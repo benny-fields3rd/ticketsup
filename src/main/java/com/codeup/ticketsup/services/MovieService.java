@@ -1,17 +1,24 @@
 package com.codeup.ticketsup.services;
 
 import com.codeup.ticketsup.models.Movie;
-import com.codeup.ticketsup.models.MovieRepository;
+import com.codeup.ticketsup.models.MoviesRepository;
+
+import java.util.List;
 
 public class MovieService {
 
-    private final MovieRepository PostDao;
+    private final MoviesRepository MovieDao;
 
-    public MovieService(MovieRepository postDao) {
-        PostDao = postDao;
+    public MovieService(MoviesRepository MovieDao) {
+        this.MovieDao = MovieDao;
     }
-    public Movie create(Movie post){
-        return PostDao.save(post);
+
+
+    public List<Movie> all() {
+        return (List<Movie>) MovieDao.findAll();
     }
+
+
+
 }
 
