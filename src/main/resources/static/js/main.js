@@ -84,7 +84,7 @@ $(document).ready(() => {
         let id = $(this).parent().prop("id");
         console.log(id);
         sessionStorage.setItem('movieId', id);
-        window.location = '/movie';
+        window.location = '/movie/'+id;
         return false;
     });
 // function movieSelected(id){
@@ -114,11 +114,9 @@ function getMovie() {
               <li class="list-group-item"><strong>Released:</strong> ${results.release_date}</li>
               <li class="list-group-item"><strong>Rated:</strong> ${results.vote_average}</li>
               <li class="list-group-item"><strong>Production Company:</strong> ${results.production_companies[0].name}</li>
-              <li class="list-group-item"  th:field="*{tmdb_id}" >${movieId}</li>
-              <li>IsActive</li>
+              <li class="list-group-item"   >${movieId}</li>
             </ul>
             </form>
-            <button type="submit"></button>
           </div>
         </div>
         <div class="row">

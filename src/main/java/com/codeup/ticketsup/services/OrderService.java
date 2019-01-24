@@ -15,6 +15,9 @@ public class OrderService {
     public OrderService( OrderRepository orderRepo){
         this.orderRepo = orderRepo;
     }
+    public Order create(Order order){
+        return orderRepo.save(order);
+    }
 
     public List<Order> allOrders(){
         return (List<Order>) orderRepo.findAll();
