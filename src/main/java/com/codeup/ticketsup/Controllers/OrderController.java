@@ -24,7 +24,6 @@ public class OrderController {
     @PostMapping("/order")
     public String saveNewOrder(@ModelAttribute Order order) {
         order.setQR_code("");
-
         Order newOrder = orderService.saveOrder(order);
 
         return "redirect:/order/" + newOrder.getId() ;
@@ -37,6 +36,14 @@ public class OrderController {
         Order order = orderService.singleOrder(id);
         model.addAttribute("order" , order);
 
-        return "ticketOrders/food";
+        return "ticketOrders/seat_selection";
     }
+    @PostMapping("/order/{id}")
+    public String saveSeatsToTheNewOrder(@ModelAttribute Order order) {
+        order.setQR_code("");
+        Order newOrder = orderService.saveOrder(order);
+
+        return "redirect:/order/" + newOrder.getId() ;
+    }
+
 }
