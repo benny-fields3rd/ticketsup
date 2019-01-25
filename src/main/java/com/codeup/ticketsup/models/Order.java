@@ -48,10 +48,12 @@ public class Order {
             joinColumns={@JoinColumn(name="order_id")},
             inverseJoinColumns={@JoinColumn(name="food_id")}
     )
+
     private List<Food> food;
 
     public Order() {
     }
+
 
     public Order(String order_date, String QR_code, int total_tickets, String movie_time, User user, Status status, Movie movies, List<Food> food) {
         this.order_date = order_date;
