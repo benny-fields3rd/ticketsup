@@ -32,7 +32,7 @@ public class SeatController {
         Order order = orderRepository.findOne(id);
         order.setSeats(seats);
         orderRepository.save(order);
-        return "user/seat_selection";
+        return "redirect:/food/" + id ;
     }
 
 

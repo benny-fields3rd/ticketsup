@@ -41,13 +41,5 @@ public class OrderController {
         return "ticketOrders/seat_selection";
     }
 
-//    @PostMapping("/seat/{id}")
-//    public String saveSeatsToTheNewOrder(@PathVariable int id, @RequestParam(name="seats") List<String> seats) {
-//
-//
-//        Order newOrder = orderService.saveOrder(order);
-//
-//        return "redirect:/order/" + newOrder.getId() ;
-//    }
 
 }

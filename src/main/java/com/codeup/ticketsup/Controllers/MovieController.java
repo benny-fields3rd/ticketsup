@@ -1,9 +1,7 @@
 package com.codeup.ticketsup.Controllers;
 
-import com.codeup.ticketsup.models.MoviesRepository;
 import com.codeup.ticketsup.models.Order;
 import com.codeup.ticketsup.models.Users;
-import com.codeup.ticketsup.services.MovieService;
 import com.codeup.ticketsup.services.OrderService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
