@@ -9,7 +9,10 @@
 
         <!-- Below this, food selection -->
         <form th:action="@{/food}" th:method="post" th:object="${food}">
-        <div class="row"> <!-- top row -->
+            <input type="hidden" name="order_id" th:value="${order_id}" />
+
+            <div class="row"> <!-- top row -->
+
             <div class="col s12 m4">
                 <div class="card">
                     <div class="card-image">
@@ -21,7 +24,7 @@
                     </div>
                     <div class="card-action">
                         <label>
-                            <input type="checkbox" name="food" value="popcorn" class="filled-in" />
+                            <input type="checkbox" name="food" th:value="popcorn" class="filled-in" />
                             <span>Check box to add to order</span>
                         </label>
                     </div>
@@ -40,7 +43,7 @@
                     </div>
                     <div class="card-action">
                         <label>
-                            <input type="checkbox" name="food" value="drink" class="filled-in" />
+                            <input type="checkbox" name="food" th:value="drink" class="filled-in" />
                             <span>Check box to add to order</span>
                         </label>
                     </div>
@@ -63,7 +66,7 @@
                     </div>
                     <div class="card-action">
                         <label>
-                            <input type="checkbox" name="food" value="burger" class="filled-in" />
+                            <input type="checkbox" name="food" th:value="1" class="filled-in" />
                             <span>Check box to add to order</span>
                         </label>
                     </div>
@@ -82,7 +85,7 @@
                     </div>
                     <div class="card-action">
                         <label>
-                            <input type="checkbox" name="food" value="fries" class="filled-in" />
+                            <input type="checkbox" name="food" th:value="2" class="filled-in" />
                             <span>Check box to add to order</span>
                         </label>
                     </div>
@@ -101,7 +104,7 @@
                     </div>
                     <div class="card-action">
                         <label>
-                            <input type="checkbox" name="food" value="pizza" class="filled-in" />
+                            <input type="checkbox" name="food" th:value="3" class="filled-in" />
                             <span>Check box to add to order</span>
                         </label>
                     </div>
@@ -120,7 +123,7 @@
                     </div>
                     <div class="card-action">
                         <label>
-                            <input type="checkbox" name="food" value="hot dog" class="filled-in" />
+                            <input type="checkbox" name="food" th:value="4" class="filled-in" />
                             <span>Check box to add to order</span>
                         </label>
                     </div>
@@ -139,7 +142,7 @@
                     </div>
                     <div class="card-action">
                         <label>
-                            <input type="checkbox" name="food" value="nachos" class="filled-in" />
+                            <input type="checkbox" name="food" th:value="5" class="filled-in" />
                             <span>Check box to add to order</span>
                         </label>
                     </div>
@@ -149,7 +152,7 @@
         </div><!-- closes bottom row -->
             <div class="row">
                 <button class="btn waves-effect waves-light" type="submit">Skip</button>
-                <button class="btn waves-effect waves-light" type="submit">Checkout</button>
+                <button type="submit">finish</button>
             </div>
         </form>
     </div><!-- /.container -->
