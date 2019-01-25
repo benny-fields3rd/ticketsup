@@ -64,6 +64,18 @@ public class Order {
         this.food = food;
     }
 
+    public Order(String order_date, String QR_code, int total_tickets, String movie_time, User user, Status status, Movie movies, List<Seat> seats, List<Food> food) {
+        this.order_date = order_date;
+        this.QR_code = QR_code;
+        this.total_tickets = total_tickets;
+        this.movie_time = movie_time;
+        this.user = user;
+        this.status = status;
+        this.movies = movies;
+        this.seats = seats;
+        this.food = food;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -134,6 +146,14 @@ public class Order {
 
     public List<Food> getFood() {
         return food;
+    }
+
+    public void setSeats(List<Seat> seats) {
+        this.seats = seats;
+    }
+
+    public List<Seat> getSeats() {
+        return seats;
     }
 }
 
