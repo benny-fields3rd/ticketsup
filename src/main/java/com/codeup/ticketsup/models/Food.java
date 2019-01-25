@@ -11,8 +11,6 @@ public class Food {
     @GeneratedValue
     private int id;
 
-    private int quantity;
-
     private String name;
 
     private Double price;
@@ -20,4 +18,41 @@ public class Food {
     @ManyToMany(mappedBy = "food")
     private List<Order> orders;
 
+    public Food(String name, Double price, List<Order> orders) {
+        this.name = name;
+        this.price = price;
+        this.orders = orders;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
 }
