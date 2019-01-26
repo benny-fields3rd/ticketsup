@@ -16,7 +16,7 @@ INSERT INTO food (name, price) VALUES
                                       ('burger', 7.00),
                                       ('drink', 3.00),
                                       ('pizza', 5.00),
-                                      ('hot dog', 5.00),
+                                      ('hotdog', 5.00),
                                       ('nacho', 5.00),
                                       ('popcorn', 5.00),
                                       ('fries', 5.00);

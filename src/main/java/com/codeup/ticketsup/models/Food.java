@@ -24,6 +24,9 @@ public class Food {
         this.orders = orders;
     }
 
+    public Food() {
+    }
+
     public int getId() {
         return id;
     }
