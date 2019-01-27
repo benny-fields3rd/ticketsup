@@ -52,8 +52,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers(
-                        "/order/{id}/place", // only authenticated users can order
-                        "/order/{id}/edit"// only authenticated users can edit order
+                        "/review/{id}", // only authenticated users can order
+                        "/orders/{id}/edit"// only authenticated users can edit order
                 )
                 .authenticated()
         ;

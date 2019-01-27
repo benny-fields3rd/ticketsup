@@ -9,9 +9,10 @@
         <!--//MOVIE CONTENT WILL BE DISPLAYED IN THIS CONTAINER//-->
       <form th:action="@{/order}" th:method="post" th:object="${order}">
         <div id="movie" class="well">
-
+            /*single movie api*/
         </div>
-    <h2>Select Date and Time</h2>
+            <input type="hidden" name="movies_id" th:value="${movies_id}" th:field="${movies_id}"/>
+          <h2>Select Date and Time</h2>
         <div class="row">
             <div class="col s8">
             <!--CALENDER AND DATE WILL SHOW UP HERE-->
@@ -24,11 +25,11 @@
             <div class="input-field col s8">
                 <select th:field="*{movie_time}">
                     <option value="" class="disabled selected">Choose your option</option>
-                    <option value="1">8:02am</option>
-                    <option value="2">11:20am</option>
-                    <option value="3">2:35pm</option>
-                    <option value="4">5:45pm</option>
-                    <option value="5">8:35pm</option>
+                    <option value="8:02a">8:02am</option>
+                    <option value="11:20am">11:20am</option>
+                    <option value="2:35pm">2:35pm</option>
+                    <option value="5:45pm">5:45pm</option>
+                    <option value="8:35p">8:35pm</option>
                 </select>
                 <label>Please select a time</label>
             </div>
@@ -43,7 +44,7 @@
                     <option value="5">7</option>
                     <option value="5">8</option>
                 </select>
-                <label>Please select amount</label>
+                <label>Please select amount :<small>$7.00 each</small> </label>
             </div>
         </div>
 

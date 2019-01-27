@@ -3,7 +3,43 @@
 <head th:replace="partials :: head ('Review order')"></head>
 
 <body>
+<div th:replace="partials::navbar"></div>
 
-<h1>Great</h1>
+<div class="container">
+
+        <form th:action="@{/orderSubmited}" th:method="post" th:object="${order}">
+            <table>
+                <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Item Price</th>
+                    <th>Quantity</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>Tickets</td>
+                    <td>$7.00</td>
+                    <td th:text="${order.total_tickets}"></td>
+                </tr>
+                <div th:each="food : ${orderFood}" class="col s1">
+                    <tr>
+                        <td th:text="${food.name}"></td>
+                        <td th:text="${order.total_tickets}" ></td>
+                        <td>1</td>
+                    </tr>
+                </div>
+
+                </tbody>
+            </table>
+
+
+
+        </form>
+</div>
+<footer th:replace="partials :: footer" />
+
+
 </body>
 </html>
