@@ -5,7 +5,7 @@
 <body>
     <div th:replace="partials::navbar"></div>
     <div class="container">
-        <h1>Food Orders</h1>
+        <h1>Add Food?</h1>
 
         <!-- Below this, food selection -->
         <form th:action="@{/food}" th:method="post" th:object="${allFood}">
@@ -16,24 +16,26 @@
                 <div th:each="food : ${allFood}" class="col s12 m4">
                     <div class="card">
                         <div class="card-image">
-                            <img th:src="'/img/' + ${food.name} + '.jpg'" alt="Popcorn"/>
-                            <span CLASS="card-title" th:text="${food.name}"></span>
-
+                            <img th:src="'/img/' + ${food.name} + '.jpg'" alt="Food"/>
+                            <span class="card-title" th:text="${#strings.toUpperCase(food.name)}"></span>
 
                         </div>
                         <div class="card-action">
                             <label>
                                 <input type="checkbox" name="food" th:value="${food.id}" class="filled-in"/>
-                                <span><small CLASS=" right" th:text="'$'+${food.price}"></small>add to order  .</span>
+                                <span>Add to order</span>
+                                <medium class="right" th:text="'$'+${#numbers.formatDecimal(food.price, 0, 2)}"></medium>
                             </label>
                         </div>
                     </div>
                 </div>
-
-
-                <button class="btn waves-effect waves-light" type="submit">Skip</button>
-                <button type="submit">finish</button>
             </div>
+
+            <div class="row">
+                <button class="btn waves-effect waves-light" type="submit">Skip Food</button>
+                <button class="btn waves-effect waves-light" type="submit">Continue</button>
+            </div>
+
         </form>
     </div><!-- /.container -->
     <div th:replace="partials::footer"></div>
