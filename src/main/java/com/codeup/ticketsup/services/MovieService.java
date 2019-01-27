@@ -7,16 +7,21 @@ import java.util.List;
 
 public class MovieService {
 
-    private final MoviesRepository MovieDao;
+    private final MoviesRepository movieRep;
 
-    public MovieService(MoviesRepository MovieDao) {
-        this.MovieDao = MovieDao;
+    public MovieService(MoviesRepository movieRep) {
+        this.movieRep = movieRep;
     }
 
 
     public List<Movie> all() {
-        return (List<Movie>) MovieDao.findAll();
+        return (List<Movie>) movieRep.findAll();
     }
+
+    public Movie singleMovie(int id){
+        return movieRep.findOne(id);
+    }
+
 
 
 
