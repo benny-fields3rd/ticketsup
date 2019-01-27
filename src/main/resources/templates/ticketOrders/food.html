@@ -5,155 +5,37 @@
 <body>
     <div th:replace="partials::navbar"></div>
     <div class="container">
-        <h1>Food Orders</h1>
+        <h1>Add Food?</h1>
 
         <!-- Below this, food selection -->
-        <form th:action="@{/food}" th:method="post" th:object="${food}">
+        <form th:action="@{/food}" th:method="post" th:object="${allFood}">
             <input type="hidden" name="order_id" th:value="${order_id}" />
 
             <div class="row"> <!-- top row -->
 
-            <div class="col s12 m4">
-                <div class="card">
-                    <div class="card-image">
-                        <img th:src="@{/img/popcorn.jpg}" alt="Popcorn"/>
-                        <span CLASS="card-title">Popcorn</span>
-                    </div>
-                    <div class="card-content">
-                        <p>Don't forget your popcorn! One size only, Large. Grab your bucket or more!</p>
-                    </div>
-                    <div class="card-action">
-                        <label>
-                            <input type="checkbox" name="food" th:value="popcorn" class="filled-in" />
-                            <span>Check box to add to order</span>
-                        </label>
+                <div th:each="food : ${allFood}" class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img th:src="'/img/' + ${food.name} + '.jpg'" alt="Food"/>
+                            <span class="card-title" th:text="${#strings.toUpperCase(food.name)}"></span>
+
+                        </div>
+                        <div class="card-action">
+                            <label>
+                                <input type="checkbox" name="food" th:value="${food.id}" class="filled-in"/>
+                                <span>Add to order</span>
+                                <medium class="right" th:text="'$'+${#numbers.formatDecimal(food.price, 0, 2)}"></medium>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col s12 m4">
-                <div class="card">
-                    <div class="card-image">
-                        <img th:src="@{/img/drinks.jpg}" alt="Fountain Drinks"/>
-                        <span CLASS="card-title">Drinks</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <label>
-                            <input type="checkbox" name="food" th:value="drink" class="filled-in" />
-                            <span>Check box to add to order</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-        </div> <!-- closes top row -->
-
-        <div class="row"> <!-- bottom row -->
-
-            <div class="col s12 m4">
-                <div class="card">
-                    <div class="card-image">
-                        <img th:src="@{/img/cheeseburger.jpg}" alt="burger"/>
-                        <span CLASS="card-title">Burgers</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <label>
-                            <input type="checkbox" name="food" th:value="1" class="filled-in" />
-                            <span>Check box to add to order</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="card">
-                    <div class="card-image">
-                        <img th:src="@{/img/fries.jpg}" alt="french fries"/>
-                        <span CLASS="card-title">Fries</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <label>
-                            <input type="checkbox" name="food" th:value="2" class="filled-in" />
-                            <span>Check box to add to order</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="card">
-                    <div class="card-image">
-                        <img th:src="@{/img/pizza.jpg}" alt="Pizza"/>
-                        <span CLASS="card-title">Pizza</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <label>
-                            <input type="checkbox" name="food" th:value="3" class="filled-in" />
-                            <span>Check box to add to order</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="card">
-                    <div class="card-image">
-                        <img th:src="@{/img/hotdogs.jpg}" alt="Hot Dog"/>
-                        <span CLASS="card-title">Hot Dogs</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <label>
-                            <input type="checkbox" name="food" th:value="4" class="filled-in" />
-                            <span>Check box to add to order</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="card">
-                    <div class="card-image">
-                        <img th:src="@{/img/nachos.jpg}" alt="Nachos"/>
-                        <span CLASS="card-title">Nachos</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <label>
-                            <input type="checkbox" name="food" th:value="5" class="filled-in" />
-                            <span>Check box to add to order</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-        </div><!-- closes bottom row -->
             <div class="row">
-                <button class="btn waves-effect waves-light" type="submit">Skip</button>
-                <button type="submit">finish</button>
+                <button class="btn waves-effect waves-light" type="submit">Skip Food</button>
+                <button class="btn waves-effect waves-light" type="submit">Continue</button>
             </div>
+
         </form>
     </div><!-- /.container -->
     <div th:replace="partials::footer"></div>

@@ -13,12 +13,15 @@ INSERT INTO seats (name) VALUES
                                 ('j1'), ('j2'), ('j3'), ('j4'), ('j5'), ('j6'), ('j7'), ('j8');
 
 INSERT INTO food (name, price) VALUES
-                                      ('burger', 7.00),
-                                      ('drink', 3.00),
+                                      ('burgers', 7.00),
+                                      ('drinks', 3.00),
                                       ('pizza', 5.00),
-                                      ('hot dog', 5.00),
-                                      ('nacho', 5.00),
+                                      ('hot-dogs', 5.00),
+                                      ('nachos', 5.00),
                                       ('popcorn', 5.00),
                                       ('fries', 5.00);
 
 
+
+INSERT INTO status (status) VALUES
+                                ('Movie Selection'), ('Seats Selection'), ('Food Selection'), ('Review The Order'), ('Order Placed');

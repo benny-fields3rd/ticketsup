@@ -26,7 +26,7 @@ public class FoodController {
     @GetMapping("/food/{id}")
     public String food(@PathVariable int id, Model model) {
         model.addAttribute("order_id", id);
-        model.addAttribute("food" ,  foodRepository.findAll());
+        model.addAttribute("allFood" ,  foodRepository.findAll());
         return "ticketOrders/food";
     }
 
