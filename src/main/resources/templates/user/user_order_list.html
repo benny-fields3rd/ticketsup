@@ -1,24 +1,24 @@
-<!--<!DOCTYPE html>-->
-<!--<html  xmlns:th="http://www.thymeleaf.org">-->
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
 
-<!--<head th:replace="partials::head('Food Orders')"></head>-->
-<!--<body>-->
-<!--<div th:replace="partials::navbar"></div>-->
-<!--<div class="container">-->
-    <!--<h3>List of all Orders</h3>-->
-    <!--<ul>-->
-        <!--<li class="card" th:each="post : ${order}">-->
-            <!--<div class="card-body">-->
-                <!--<h5 class="card-title"><a th:href="'orders/' + ${order.id}"><span th:text="${order.title}"></span></a></h5>-->
-                <!--<p class="card-text">Order Id: <span th:text="${order.id}"></span></p>-->
-                <!--<p class="card-text"><span th:text="${order.body}"></span></p>-->
-            <!--</div>-->
-        <!--</li>-->
-    <!--</ul>-->
+<head th:replace="partials::head('Food Orders')"></head>
+<body>
+<div th:replace="partials::navbar"></div>
+<div class="container">
+    <h3>List of all Orders</h3>
+    <ul>
+        <li class="card" th:each="post : ${order}">
+            <div class="card-body">
+                <h5 class="card-title"><a th:href="'orders/' + ${order.id}"><span th:text="${order.title}"></span></a></h5>
+                <p class="card-text">Order Id: <span th:text="${order.id}"></span></p>
+                <p class="card-text"><span th:text="${order.body}"></span></p>
+            </div>
+        </li>
+    </ul>
 
 
-<!--</div>&lt;!&ndash; /.container &ndash;&gt;-->
-<!--<div th:replace="partials::footer"></div>-->
+</div><!-- /.container -->
+<div th:replace="partials::footer"></div>
 
-<!--</body>-->
-<!--</html>-->
+</body>
+</html>

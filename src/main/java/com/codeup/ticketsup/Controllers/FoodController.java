@@ -2,9 +2,7 @@ package com.codeup.ticketsup.Controllers;
 
 import com.codeup.ticketsup.interfaces.FoodRepository;
 import com.codeup.ticketsup.interfaces.OrderRepository;
-import com.codeup.ticketsup.models.Food;
-import com.codeup.ticketsup.models.Order;
-import com.codeup.ticketsup.models.Seat;
+import com.codeup.ticketsup.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,8 +21,13 @@ public class FoodController {
     @Autowired
     FoodRepository foodRepository;
 
-    @GetMapping("/food/{id}")
+    private StatusRepository statusRepository;
 
+    public FoodController(StatusRepository statusRepository) {
+        this.statusRepository = statusRepository;
+    }
+
+    @GetMapping("/food/{id}")
     public String food(@PathVariable int id, Model model) {
         model.addAttribute("order_id", id);
         model.addAttribute("allFood" ,  foodRepository.findAll());
@@ -34,7 +37,10 @@ public class FoodController {
     @PostMapping("/food")
     public String saveFood(@RequestParam(name = "order_id") int id, @RequestParam(name = "food") List<Food> food) {
         Order order = orderRepository.findOne(id);
+        Status status3 = statusRepository.findOne(3);
+
         order.setFood(food);
+        order.setStatus(status3);
         orderRepository.save(order);
         return "redirect:/review/" + id ;
     }
