@@ -1,9 +1,6 @@
 package com.codeup.ticketsup.Controllers;
 
-import com.codeup.ticketsup.models.Order;
-import com.codeup.ticketsup.models.Seat;
-import com.codeup.ticketsup.models.SeatsRepository;
-import com.codeup.ticketsup.models.Users;
+import com.codeup.ticketsup.models.*;
 import com.codeup.ticketsup.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +16,10 @@ public class OrderController {
 
     @Autowired
     SeatsRepository seatsRepository;
-
+    @Autowired
+    MoviesRepository moviesRepository;
+    @Autowired
+    StatusRepository statusRepository;
 
     public OrderController(OrderService orderService, Users userRepo) {
         this.orderService = orderService;
@@ -28,9 +28,22 @@ public class OrderController {
 
 
     @PostMapping("/order")
-    public String saveNewOrder(@ModelAttribute Order order) {
-        order.setQR_code("");
+    public String saveNewOrder(@ModelAttribute Order order , @RequestParam ( name ="movies_id") int movies_id) {
+        Movie movie = new Movie();
+        movie.setTmdb_id(movies_id);
+        movie.setActive(true);
+
+
+        Status status1 = statusRepository.findOne(1);
+
+        Movie saveMovie = moviesRepository.save(movie);
+
+
+        order.setMovies(saveMovie);
+        order.setStatus(status1);
+
         Order newOrder = orderService.saveOrder(order);
+
         return "redirect:/order/" + newOrder.getId() ;
     }
 

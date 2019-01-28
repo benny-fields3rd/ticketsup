@@ -87,11 +87,6 @@ $(document).ready(() => {
         window.location = '/movie/'+id;
         return false;
     });
-// function movieSelected(id){
-//     sessionStorage.setItem('movieId', id);
-//     window.location = 'moviepage.html';
-//     return false;
-// }
 
 
 function getMovie() {
@@ -157,5 +152,19 @@ getMovie();
         $('select').formSelect();
     });
 
-    console.log('kkk');
+    function totalCal() {
+
+        let ticketsTotal = value($(".ticketsTotal"));
+        let totalFoodPrice = 0;
+        $(".foodPrice").each(function () {
+            totalFoodPrice += parseInt(value($(".foodPrice")));
+        });
+        console.log(totalFoodPrice);
+        let orderTotal = (parseInt(ticketsTotal) * 7) + totalFoodPrice;
+        console.log(orderTotal);
+        $("#total").text(orderTotal);
+    }
+    totalCal()
+
+
 });

@@ -15,10 +15,14 @@ public class Status {
 
     public Status() {
     }
+
     public Status(String status) {
         this.status = status;
     }
-
+    public Status(String status , int id) {
+        this.status = status;
+        this.id = id;
+    }
 
     public void setId(int id) {
         this.id = id;

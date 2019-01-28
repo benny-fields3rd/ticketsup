@@ -16,8 +16,8 @@ public class Order {
     @Column(nullable = false , length = 100)
     private String order_date;
 
-    @Column(nullable = false , length = 100)
-    private String QR_code;
+    @Column
+    private int QR_code;
 
     private int total_tickets;
 
@@ -55,7 +55,7 @@ public class Order {
     }
 
 
-    public Order(String order_date, String QR_code, int total_tickets, String movie_time, User user, Status status, Movie movies, List<Food> food) {
+    public Order(String order_date, int QR_code, int total_tickets, String movie_time, User user, Status status, Movie movies, List<Food> food) {
         this.order_date = order_date;
         this.QR_code = QR_code;
         this.total_tickets = total_tickets;
@@ -66,7 +66,7 @@ public class Order {
         this.food = food;
     }
 
-    public Order(String order_date, String QR_code, int total_tickets, String movie_time, User user, Status status, Movie movies, List<Seat> seats, List<Food> food) {
+    public Order(String order_date, int QR_code, int total_tickets, String movie_time, User user, Status status, Movie movies, List<Seat> seats, List<Food> food) {
         this.order_date = order_date;
         this.QR_code = QR_code;
         this.total_tickets = total_tickets;
@@ -86,7 +86,7 @@ public class Order {
         this.order_date = order_date;
     }
 
-    public void setQR_code(String QR_code) {
+    public void setQR_code(int QR_code) {
         this.QR_code = QR_code;
     }
 
@@ -122,7 +122,7 @@ public class Order {
         return order_date;
     }
 
-    public String getQR_code() {
+    public int getQR_code() {
         return QR_code;
     }
 

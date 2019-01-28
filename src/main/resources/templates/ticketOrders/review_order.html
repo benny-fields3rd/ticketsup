@@ -7,14 +7,17 @@
 
 <div class="container">
         <!-- Need to add movie title, seat numbers/name -->
-        <form th:action="@{/orderSubmited}" th:method="post" th:object="${order}">
-            <table class="responsive-table">
+
+    <form th:action="@{/orderSubmited}" th:method="post" th:object="${order}">
+        <input type="hidden" name="order_id" th:value="${order_id}" />
+
+        <table class="responsive-table">
                 <thead>
                 <tr>
                     <th>Item Name</th>
                     <th>Item Price</th>
                     <th>Quantity</th>
-                    <th>Total Price</th>
+
                 </tr>
                 </thead>
 
@@ -22,27 +25,29 @@
                 <tr>
                     <td>Tickets</td>
                     <td>$7.00</td>
-                    <td th:text="${order.total_tickets}"></td>
+                    <td class="ticketsTotal" th:text="${order.total_tickets}"></td>
                 </tr>
                 <div th:each="food : ${orderFood}" class="col s1">
                     <tr>
                         <td th:text="${food.name}"></td>
-                        <td th:text="'$'+${#numbers.formatDecimal(food.price, 0, 2)}"></td>
-                        <td th:text="${order.total_tickets}" ></td>
+                        <td class="foodPrice" th:text="'$'+${#numbers.formatDecimal(food.price, 0, 2)}"></td>
                         <td>1</td>
                     </tr>
-
                 </div>
+                <tr>
+                    <td></td>
+                    <td><strong>Total :</strong></td>
+                    <td id="total"></td>
+                </tr>
 
                 </tbody>
             </table>
 
 
-
+            <button type="submit">Place Order</button>
         </form>
 </div>
 <footer th:replace="partials :: footer" />
-
 
 </body>
 </html>
