@@ -138,33 +138,24 @@ function getMovie() {
 getMovie();
 
     //THIS IS FOR THE SELECT DATE OF THE MOVIE//
+
+   //  var date = $('#date');
+   //  var time = $('#movieTime');
+   //
+   // if (date.val() == null && time.val() == null) {
+   //  $('#btn1').removeAttr(disabled);
+   // }
+
+
     $(document).ready(function(){
         $('.datepicker').datepicker();
 
     });
 
-    var time = $('#selectTime');
-    var tcktAmount = $('#selectAmount');
-
-    $(document).ready(function(){
-        $('#dateBtn').attr('disabled',true);
-        time.keyup(function(){
-            if($(this).val().length !=0)
-                $('#dateBtn').attr('disabled', false);
-            else
-                $('#dateBtn').attr('disabled',true);
-        })
-    });
-    //THIS IS FOR THE SELECT TIME OF THE MOVIE//
+//THIS IS FOR THE SELECT TIME OF THE MOVIE//
     $(document).ready(function(){
         $('select').formSelect();
     });
-
-    // For drop down buttons in food orders
-    $(document).ready(function(){
-        $('select').formSelect();
-    });
-
 
     console.log('kkk');
 });
