@@ -98,28 +98,28 @@ function getMovie() {
         success: function (results) {
             console.log(results);
             let output = `
+       
         <div class="row">
-          <div class="col-md-4">
+          <div class="col s12 m4">
             <img src="${imgPath + results.poster_path}" class="thumbnail">
           </div>
-          <div class="col-md-8">
+          <div class="col s12 m8">
             <h2>${results.title}</h2>
             <ul class="list-group">
               <li class="list-group-item"><strong>Genre:</strong> ${results.genres[0].name}</li>
               <li class="list-group-item"><strong>Released:</strong> ${results.release_date}</li>
               <li class="list-group-item"><strong>Rated:</strong> ${results.vote_average}</li>
               <li class="list-group-item"><strong>Production Company:</strong> ${results.production_companies[0].name}</li>
-              <li class="list-group-item"   >${movieId}</li>
+              <li class="list-group-item">${movieId}</li>
             </ul>
-            </form>
-          </div>
-        </div>
-        <div class="row">
-          <div class="well">
+            <div class="well">
             <h3>Plot</h3>
             ${results.overview}
           </div>
+            </form>
+          </div>
         </div>
+     
         
       `;
             $('#movie').html(output);
@@ -133,16 +133,21 @@ function getMovie() {
 getMovie();
 
     //THIS IS FOR THE SELECT DATE OF THE MOVIE//
+
+   //  var date = $('#date');
+   //  var time = $('#movieTime');
+   //
+   // if (date.val() == null && time.val() == null) {
+   //  $('#btn1').removeAttr(disabled);
+   // }
+
+
     $(document).ready(function(){
         $('.datepicker').datepicker();
+
     });
 
-    //THIS IS FOR THE SELECT TIME OF THE MOVIE//
-    $(document).ready(function(){
-        $('select').formSelect();
-    });
-
-    // For drop down buttons in food orders
+//THIS IS FOR THE SELECT TIME OF THE MOVIE//
     $(document).ready(function(){
         $('select').formSelect();
     });
@@ -160,5 +165,6 @@ getMovie();
         $("#total").text(orderTotal);
     }
     totalCal()
+
 
 });
