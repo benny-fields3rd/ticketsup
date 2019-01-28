@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="partials :: head ('Review orders')"></head>
+
+    <body>
+        <div th:replace="partials::navbar"></div>
+
+        <div class="container">
+            <!-- Need to add movie title, seat numbers/name -->
+            <form th:action="@{/adminReviewOrders}" th:method="post" th:object="${orders}">
+                <table class="responsive-table">
+                    <thead>
+                        <tr>
+                            <th>Order Id</th>
+                            <th>Movie Id</th>
+                            <th>Movie Date</th>
+                            <th>Number of Movie Tickets</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <div th:each="order : ${orders}" class="col s1">
+                            <tr>
+                                <td th:text="${order.getId()}"></td>
+                                <td th:text="${order.getMovies().getTmdb_id()}"></td>
+                                <td th:text="${order.getOrder_date()}"></td>
+                                <td th:text="${order.getTotal_tickets()}"></td>
+                                <td th:text="${order.getStatus().status}"></td>
+                            </tr>
+                        </div>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+
+    <footer th:replace="partials :: footer" />
+
+    </body>
+</html>
