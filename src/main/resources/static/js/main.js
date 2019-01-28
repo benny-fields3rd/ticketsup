@@ -138,21 +138,24 @@ function getMovie() {
 getMovie();
 
     //THIS IS FOR THE SELECT DATE OF THE MOVIE//
+
+   //  var date = $('#date');
+   //  var time = $('#movieTime');
+   //
+   // if (date.val() == null && time.val() == null) {
+   //  $('#btn1').removeAttr(disabled);
+   // }
+
+
     $(document).ready(function(){
         $('.datepicker').datepicker();
 
     });
 
-    var date = $('.datepicker');
-    var movieBtn = $('.btn')
-
-    //THIS IS FOR THE SELECT TIME OF THE MOVIE//
+//THIS IS FOR THE SELECT TIME OF THE MOVIE//
     $(document).ready(function(){
         $('select').formSelect();
     });
 
-
-
-
-    console.log('.datepicker');
+    console.log('kkk');
 });

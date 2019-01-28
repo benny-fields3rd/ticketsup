@@ -16,13 +16,13 @@
         <div class="row">
             <div class="col s8">
             <!--CALENDER AND DATE WILL SHOW UP HERE-->
-            <input th:field="*{order_date}" type="text" placeholder="Select Date" class="datepicker" />
+            <input id="date" th:field="*{order_date}" type="text" placeholder="Select Date" class="datepicker" />
             </div>
         </div>
 
         <div class="row">
             <div class="input-field col s8">
-                <select th:field="*{movie_time}">
+                <select id="movieTime" th:field="*{movie_time}">
                     <option value="" class="disabled selected">Choose your time</option>
                     <option value="8:02a">8:02am</option>
                     <option value="11:20am">11:20am</option>
@@ -33,7 +33,7 @@
                 <label>Please select a time</label>
             </div>
             <div class="input-field col s4">
-                <select th:field="*{total_tickets}">
+                <select id="totalTickets" th:field="*{total_tickets}">
                     <option class="disabled selected" value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -47,7 +47,7 @@
             </div>
         </div>
 
-        <button class="btn waves-effect waves-light" type="submit">Next</button>
+        <button id="btn1" class="btn waves-effect waves-light" type="submit">Next</button>
       </form>
 
     </div>
