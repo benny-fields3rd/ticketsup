@@ -103,28 +103,28 @@ function getMovie() {
         success: function (results) {
             console.log(results);
             let output = `
+       
         <div class="row">
-          <div class="col-md-4">
+          <div class="col s12 m4">
             <img src="${imgPath + results.poster_path}" class="thumbnail">
           </div>
-          <div class="col-md-8">
+          <div class="col s12 m8">
             <h2>${results.title}</h2>
             <ul class="list-group">
               <li class="list-group-item"><strong>Genre:</strong> ${results.genres[0].name}</li>
               <li class="list-group-item"><strong>Released:</strong> ${results.release_date}</li>
               <li class="list-group-item"><strong>Rated:</strong> ${results.vote_average}</li>
               <li class="list-group-item"><strong>Production Company:</strong> ${results.production_companies[0].name}</li>
-              <li class="list-group-item"   >${movieId}</li>
+              <li class="list-group-item">${movieId}</li>
             </ul>
-            </form>
-          </div>
-        </div>
-        <div class="row">
-          <div class="well">
+            <div class="well">
             <h3>Plot</h3>
             ${results.overview}
           </div>
+            </form>
+          </div>
         </div>
+     
         
       `;
             $('#movie').html(output);
@@ -140,8 +140,21 @@ getMovie();
     //THIS IS FOR THE SELECT DATE OF THE MOVIE//
     $(document).ready(function(){
         $('.datepicker').datepicker();
+
     });
 
+    var time = $('#selectTime');
+    var tcktAmount = $('#selectAmount');
+
+    $(document).ready(function(){
+        $('#dateBtn').attr('disabled',true);
+        time.keyup(function(){
+            if($(this).val().length !=0)
+                $('#dateBtn').attr('disabled', false);
+            else
+                $('#dateBtn').attr('disabled',true);
+        })
+    });
     //THIS IS FOR THE SELECT TIME OF THE MOVIE//
     $(document).ready(function(){
         $('select').formSelect();

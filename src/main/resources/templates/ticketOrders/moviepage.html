@@ -21,7 +21,7 @@
         </div>
 
         <div class="row">
-            <div class="input-field col s8">
+            <div id="selectTime" class="input-field col s8">
                 <select th:field="*{movie_time}">
                     <option value="" class="disabled selected">Choose your time</option>
                     <option value="8:02a">8:02am</option>
@@ -32,7 +32,7 @@
                 </select>
                 <label>Please select a time</label>
             </div>
-            <div class="input-field col s4">
+            <div id="selectAmount" class="input-field col s4">
                 <select th:field="*{total_tickets}">
                     <option class="disabled selected" value="1">1</option>
                     <option value="2">2</option>
@@ -47,7 +47,7 @@
             </div>
         </div>
 
-            <button class="btn waves-effect waves-light" type="submit">Next</button>
+            <button id="dateBtn" class="btn waves-effect waves-light" type="submit">Next</button>
         </form>
 
         </div>
