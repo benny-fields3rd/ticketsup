@@ -20,12 +20,12 @@ public class FoodController {
     OrderRepository orderRepository;
     @Autowired
     FoodRepository foodRepository;
+    @Autowired
+    StatusRepository statusRepository;
 
-    private StatusRepository statusRepository;
-
-    public FoodController(StatusRepository statusRepository) {
-        this.statusRepository = statusRepository;
-    }
+//    public FoodController(StatusRepository statusRepository) {
+//        this.statusRepository = statusRepository;
+//    }
 
     @GetMapping("/food/{id}")
     public String food(@PathVariable int id, Model model) {
