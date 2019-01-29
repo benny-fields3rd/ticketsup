@@ -38,8 +38,20 @@ public class UserController {
         return "redirect:/login";
     }
 
+    @GetMapping("/users/profile")
+    public String showProfile(Model viewModel){
+        User logUser = usersService.loggedInUser();
+
+        if(logUser == null){
+            viewModel.addAttribute("msg", "You need to be logged in to be able to see");
+            return "error/custom";
+        }
+
+        return "redirect:/users/" + usersService.loggedInUser().getId();
+    }
+
     @GetMapping("/users/{id}/edit")
-    public String showEditForm(@PathVariable Long id, Model viewModel){
+    public String showEditForm(@PathVariable int id, Model viewModel){
         User user = usersRepository.getOne(id);
         viewModel.addAttribute("user", user);
         viewModel.addAttribute("showEditControls", usersService.canEditProfile(user));
