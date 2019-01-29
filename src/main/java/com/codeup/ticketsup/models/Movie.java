@@ -36,6 +36,7 @@ public class Movie {
         this.auditoriums = auditoriums;
     }
 
+
     public void setId(int id) {
         this.id = id;
     }
