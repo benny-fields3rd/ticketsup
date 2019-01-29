@@ -9,7 +9,7 @@
         <!-- Need to add movie title, seat numbers/name -->
 
     <form th:action="@{/orderSubmited}" th:method="post" th:object="${order}">
-        <input type="hidden" name="order_id" th:value="${order_id}" />
+        <input type="hidden" class="hiddenOrderNum" name="order_id" th:value="${order_id}" />
 
         <table class="responsive-table">
                 <thead>
@@ -44,7 +44,7 @@
             </table>
 
 
-            <button type="submit">Place Order</button>
+            <button class="orderPlaced" type="submit">Place Order</button>
         </form>
 </div>
 <footer th:replace="partials :: footer" />

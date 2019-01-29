@@ -54,6 +54,6 @@ ReviewOrderController {
         currentorder.setUser(currentUser);
 
         orderRepository.save(currentorder);
-        return "user/user_order_list/"+ currentUser;
+        return "redirect:orders/user/"+ currentUser.getId();
     }
 }

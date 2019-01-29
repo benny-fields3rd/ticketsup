@@ -1,7 +1,7 @@
 package com.codeup.ticketsup.services;
 
 import com.codeup.ticketsup.models.Movie;
-import com.codeup.ticketsup.models.MoviesRepository;
+import com.codeup.ticketsup.interfaces.MoviesRepository;
 
 import java.util.List;
 

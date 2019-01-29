@@ -2,17 +2,16 @@ package com.codeup.ticketsup.Controllers;
 
 import com.codeup.ticketsup.interfaces.OrderRepository;
 import com.codeup.ticketsup.interfaces.SeatRepository;
+import com.codeup.ticketsup.interfaces.StatusRepository;
 import com.codeup.ticketsup.models.Order;
 import com.codeup.ticketsup.models.Seat;
 import com.codeup.ticketsup.models.Status;
-import com.codeup.ticketsup.models.StatusRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Arrays;
 import java.util.List;
 
 
