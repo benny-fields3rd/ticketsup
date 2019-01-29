@@ -1,13 +1,14 @@
 package com.codeup.ticketsup.Controllers;
 
+import com.codeup.ticketsup.interfaces.MoviesRepository;
+import com.codeup.ticketsup.interfaces.SeatsRepository;
+import com.codeup.ticketsup.interfaces.StatusRepository;
 import com.codeup.ticketsup.models.*;
 import com.codeup.ticketsup.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @Controller
 public class OrderController {

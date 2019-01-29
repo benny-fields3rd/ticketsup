@@ -1,6 +1,8 @@
 package com.codeup.ticketsup.Controllers;
 
+import com.codeup.ticketsup.interfaces.MoviesRepository;
 import com.codeup.ticketsup.interfaces.OrderRepository;
+import com.codeup.ticketsup.interfaces.StatusRepository;
 import com.codeup.ticketsup.models.*;
 import com.codeup.ticketsup.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="partials::head('Food Orders')"></head>
+<body>
+<div th:replace="partials::navbar"></div>
+<div class="container">
+    <h3>List of all Orders</h3>
+    <form th:action="@{/}" th:method="post" th:object="${user_orders}">
+
+    <ul>
+        <li class="card" th:each="order : ${user_orders}">
+            <div class="card-body">
+                <h5 class="card-title"><span th:text="${order.getUser().getusername()}"></span></h5>
+                <p class="card-text">Order Id: <span th:text="${order.id}"></span></p>
+                <p class="card-text"><span th:text="${order.order_date}"></span></p>
+
+                <form th:action="'/delete/' + ${order.id}" th:method="post" th:object="${user_orders}">
+
+                    <button >Cancel Order</button>
+                </form>
+            </div>
+        </li>
+    </ul>
+    </form>
+
+</div><!-- /.container -->
+<div th:replace="partials::footer"></div>
+
+</body>
+</html>
