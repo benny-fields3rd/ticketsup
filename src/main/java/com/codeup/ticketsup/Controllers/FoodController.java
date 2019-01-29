@@ -16,14 +16,16 @@ import java.util.List;
 @Controller
 public class FoodController {
 
-    @Autowired
-    OrderRepository orderRepository;
-    @Autowired
-    FoodRepository foodRepository;
+
+    private OrderRepository orderRepository;
+
+    private FoodRepository foodRepository;
 
     private StatusRepository statusRepository;
 
-    public FoodController(StatusRepository statusRepository) {
+    public FoodController(OrderRepository orderRepository, FoodRepository foodRepository, StatusRepository statusRepository) {
+        this.orderRepository = orderRepository;
+        this.foodRepository = foodRepository;
         this.statusRepository = statusRepository;
     }
 
