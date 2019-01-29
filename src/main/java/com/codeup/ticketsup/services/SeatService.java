@@ -1,7 +1,7 @@
 package com.codeup.ticketsup.services;
 
+import com.codeup.ticketsup.interfaces.SeatsRepository;
 import com.codeup.ticketsup.models.Seat;
-import com.codeup.ticketsup.models.SeatsRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

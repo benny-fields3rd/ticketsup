@@ -16,7 +16,8 @@
                 <p class="card-text"><span th:text="${order.order_date}"></span></p>
 
                 <form th:action="'/delete/' + ${order.id}" th:method="post" th:object="${user_orders}">
-                <button >Cancel Order</button>
+
+                    <button >Cancel Order</button>
                 </form>
             </div>
         </li>
