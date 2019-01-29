@@ -1,5 +1,6 @@
 package com.codeup.ticketsup.Controllers;
 
+import com.codeup.ticketsup.interfaces.UserRepository;
 import com.codeup.ticketsup.models.User;
 import com.codeup.ticketsup.models.Users;
 import org.springframework.context.annotation.Bean;
@@ -17,7 +18,10 @@ public class UserController {
 
 
     private Users users;
+//    private User user;
     private PasswordEncoder passwordEncoder;
+
+    private UserRepository userRepo;
 
     public UserController(Users users, PasswordEncoder passwordEncoder) {
         this.users = users;
@@ -35,26 +39,35 @@ public class UserController {
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         users.save(user);
-        return "redirect:/login";
+        return "redirect:user/show";
     }
 
-    @GetMapping("/users/profile")
-    public String showProfile(Model viewModel){
-        User logUser = usersService.loggedInUser();
+//    @GetMapping("/users/{id}")
+//    public String showUser(@PathVariable int id, Model model){
+//        User newUser = user.getId();
+//        model.addAttribute("newUser", newUser);
+//        model.addAttribute("sessionUser", usersService.loggedInUser());
+//        model.addAttribute("showEditControls", usersService.canEditProfile(newUser\));
+//        return "user/show";
+//    }
+//
+//    @GetMapping("/sign-up/users/profile")
+//    public String showProfile(Model viewModel){
+//        User logUser = usersService.loggedInUser();
+//
+//        if(logUser == null){
+//            viewModel.addAttribute("msg", "You need to be logged in to be able to see");
+//            return "error/custom";
+//        }
+//
+//        return "redirect:/users/" + usersService.loggedInUser().getId();
+//    }
 
-        if(logUser == null){
-            viewModel.addAttribute("msg", "You need to be logged in to be able to see");
-            return "error/custom";
-        }
-
-        return "redirect:/users/" + usersService.loggedInUser().getId();
-    }
-
-    @GetMapping("/users/{id}/edit")
-    public String showEditForm(@PathVariable int id, Model viewModel){
-        User user = usersRepository.getOne(id);
-        viewModel.addAttribute("user", user);
-        viewModel.addAttribute("showEditControls", usersService.canEditProfile(user));
-        return "users/edit";
-    }
+//    @GetMapping("/users/{id}/edit")
+//    public String showEditForm(@PathVariable int id, Model viewModel){
+//        User user = usersRepository.getOne(id);
+//        viewModel.addAttribute("user", user);
+//        viewModel.addAttribute("showEditControls", usersService.canEditProfile(user));
+//        return "user/edit";
+//    }
 }
