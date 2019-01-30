@@ -52,8 +52,8 @@ ReviewOrderController {
         User currentUser = userRepository.findOne(authenticatedUser.getId());
         Order currentorder = orderRepository.findOne(order);
         currentorder.setUser(currentUser);
-
         orderRepository.save(currentorder);
+
         return "redirect:orders/user/"+ currentUser.getId();
     }
 }

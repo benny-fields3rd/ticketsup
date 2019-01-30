@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html  xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="partials::head('Food Orders')"></head>
+<head th:replace="partials::head('Orders')"></head>
 <body>
 <div th:replace="partials::navbar"></div>
 <div class="container">
     <h3>List of all Orders</h3>
-    <form th:action="@{/}" th:method="post" th:object="${user_orders}">
+    <form th:action="@{/}" class="sendQr" th:method="post" th:object="${user_orders}">
 
-    <ul>
+    <ul class="ordersLIst">
         <li class="card" th:each="order : ${user_orders}">
             <div class="card-body">
+
                 <h5 class="card-title"><span th:text="${order.getUser().getusername()}"></span></h5>
-                <p class="card-text">Order Id: <span th:text="${order.id}"></span></p>
                 <p class="card-text"><span th:text="${order.order_date}"></span></p>
 
-                <form th:action="'/delete/' + ${order.id}" th:method="post" th:object="${user_orders}">
+                <!--<form th:action="'/delete/' + ${order.id}" th:method="post" th:object="${user_orders}">-->
+                    <img id='barcode'
+                         th:src="'https://api.qrserver.com/v1/create-qr-code/?data='+ ${order.id} +'&amp;size=100x100'"
+                         alt=""
+                         th:title="${order.id}"
+                         width="50"
+                         height="50" />
 
+                    <button th:value="${order.id}" type="submit" >Send Receipt</button>
                     <button >Cancel Order</button>
-                </form>
+                <!--</form>-->
             </div>
         </li>
     </ul>
@@ -26,6 +33,7 @@
 
 </div><!-- /.container -->
 <div th:replace="partials::footer"></div>
+
 
 </body>
 </html>
