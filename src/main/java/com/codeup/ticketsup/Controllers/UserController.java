@@ -47,8 +47,7 @@ public class UserController {
 
     @GetMapping("/profile")
     public String showUser(User user, Model model){
-        User currentUser = userRepo.getOne(1);
-//        User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User thisUser = userRepo.findOne(currentUser.getId());
         model.addAttribute("user", thisUser);
         model.addAttribute("sessionUser", userService.loggedInUser());
@@ -68,11 +67,11 @@ public class UserController {
         return "redirect:/users/" + userService.loggedInUser().getId();
     }
 
-//    @GetMapping("/users/{id}/edit")
-//    public String showEditForm(@PathVariable int id, Model viewModel){
-//        User user = usersRepository.getOne(id);
-//        viewModel.addAttribute("user", user);
-//        viewModel.addAttribute("showEditControls", usersService.canEditProfile(user));
-//        return "user/edit";
-//    }
+    @GetMapping("/users/{id}/edit")
+    public String showEditForm(@PathVariable int id, Model viewModel){
+        User user = userRepo.getOne(id);
+        viewModel.addAttribute("user", user);
+        viewModel.addAttribute("showEditControls", userService.canEditProfile(user));
+        return "user/edit";
+    }
 }
