@@ -4,9 +4,11 @@ $(document).ready(() => {
 
     $(".orderPlaced").on("click" , function () {
 
-    let orderQr = $(".hiddenOrderNum").value ;
+    let orderQr = $(".hiddenOrderNum").val() ;
 
-    let qrcode = new QRCode("qrOutput", {
+        // sessionStorage.setItem(orderQr , id);
+
+    let qrcode = new QRCode({
         text: orderQr,
         width: 177,
         height: 177,

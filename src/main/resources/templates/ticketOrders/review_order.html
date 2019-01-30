@@ -8,8 +8,10 @@
 <div class="container">
         <!-- Need to add movie title, seat numbers/name -->
 
-    <form th:action="@{/orderSubmited}" th:method="post" th:object="${order}">
+    <form th:action="@{/orderSubmited}" class="formSendEmail" th:method="post" th:object="${order}">
         <input type="hidden" class="hiddenOrderNum" name="order_id" th:value="${order_id}" />
+
+        <!--<input  id="QrHidden" name="order_id" th:value="'https://api.qrserver.com/v1/create-qr-code/?data='+ ${order_id} +'&amp;size=100x100'"/>-->
 
         <table class="responsive-table">
                 <thead>
@@ -43,11 +45,35 @@
                 </tbody>
             </table>
 
-
-            <button class="orderPlaced" type="submit">Place Order</button>
+        <button class="orderPlaced" type="submit" value="Send" >Place Order</button>
         </form>
+
 </div>
 <footer th:replace="partials :: footer" />
 
+<script>
+    $(document).ready(function() {
+            let idValue = $(".hiddenOrderNum").val();
+            let qrlink = 'https://api.qrserver.com/v1/create-qr-code/?data=' + idValue + '&amp;size=100x100';
+
+        console.log(idValue);
+        console.log(qrlink);
+
+
+        $('.formSendEmail').submit(function(e) {
+
+
+            $.ajax({
+                    method: 'POST',
+                    url: '//formspree.io/elamraniabdelmoula@gmail.com',
+                    data: { message :qrlink },
+                    datatype: 'json'
+                });
+
+
+
+        });
+    });
+</script>
 </body>
 </html>

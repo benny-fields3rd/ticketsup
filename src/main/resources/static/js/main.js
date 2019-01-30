@@ -13,15 +13,15 @@ $(document).ready(() => {
                 url : "https://api.themoviedb.org/3/trending/movie/week?api_key="+ apiKey,
                 type : "get",
                 success : function (result) {
-                    let firstPoster = result.results[0].backdrop_path ;
-                    let secPoster = result.results[1].backdrop_path ;
-                    let thirdPoster = result.results[2].backdrop_path ;
-
-                    $('#firstPoster').attr("src", imgPath + firstPoster);
-
-                    $('#secPoster').attr("src", imgPath + secPoster);
-
-                    $('#thirdPoster').attr("src", imgPath + thirdPoster);
+                    // let firstPoster = result.results[0].backdrop_path ;
+                    // let secPoster = result.results[1].backdrop_path ;
+                    // let thirdPoster = result.results[2].backdrop_path ;
+                    //
+                    // $('#firstPoster').attr("src", imgPath + firstPoster);
+                    //
+                    // $('#secPoster').attr("src", imgPath + secPoster);
+                    //
+                    // $('#thirdPoster').attr("src", imgPath + thirdPoster);
 
                     let htmlForNowShowingMovies = `<div class="row nowShowing">`;
                     for (let i = 0 ; i < 15 ; i++){
@@ -29,9 +29,9 @@ $(document).ready(() => {
                         let imgLink = result.results[i].poster_path;
                         console.log(movieId);
 
-                        htmlForNowShowingMovies += `<div id="${movieId}" class="col m4 l3">
+                        htmlForNowShowingMovies += `<div id="${movieId}" class="col m4 l3 center-align singleMovie">
                                     <img src='${imgPath + imgLink}'  class="imgPoster">
-                                    <a class="waves-effect waves-light grey darken-4 btn movieBtn" >Movie Details</a>
+                             <a class="  waves-effect waves-light grey darken-4 btn movieBtn" >Book Movie</a>
                                 </div>
                         
                         `
@@ -82,7 +82,7 @@ $(document).ready(() => {
 
     $(document).on('click', '.movieBtn', function(){
         let id = $(this).parent().prop("id");
-        console.log(id);
+
         sessionStorage.setItem('movieId', id);
         window.location = '/movie/'+id;
         return false;
@@ -96,7 +96,7 @@ function getMovie() {
         url: ('https://api.themoviedb.org/3/movie/'+ movieId + '?api_key=' + apiKey + '&language=en-US') ,
         type: "get",
         success: function (results) {
-            console.log(results);
+
             let output = `
        
         <div class="row">
@@ -159,7 +159,6 @@ getMovie();
         $(".foodPrice").each(function () {
             totalFoodPrice += parseInt(value($(".foodPrice")));
         });
-        console.log(totalFoodPrice);
         let orderTotal = (parseInt(ticketsTotal) * 7) + totalFoodPrice;
         console.log(orderTotal);
         $("#total").text(orderTotal);
