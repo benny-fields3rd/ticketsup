@@ -1,67 +1,67 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
-    <head th:fragment="head(title)">
-        <meta charset="UTF-8"/>
-        <title th:text="${title}"></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-        <link rel="stylesheet" href="/css/main.css"  />
-        <link rel="stylesheet" href="/css/form.css"  />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-        <!--<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/130527/qrcode.js"></script>-->
-        <script src="/js/qrCode.js"></script>
-        <script src="/js/main.js" rel="script" ></script>
+<head th:fragment="head(title)">
+    <meta charset="UTF-8"/>
+    <title th:text="${title}"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="/css/main.css"  />
+    <link rel="stylesheet" href="/css/form.css"  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <!--<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/130527/qrcode.js"></script>-->
+    <script src="/js/qrCode.js"></script>
+    <script src="/js/main.js" rel="script" ></script>
 
-    </head>
-    <body  id="top" >
-        <nav th:fragment="navbar">
-            <div class="nav-wrapper blue-grey darken-3">
-                <a href="/" class="brand-logo">Ticketsup Logo</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <div class="button-group" sec:authorize="!isFullyAuthenticated()">
-                        <li><a href="/aboutUs">Info</a></li>
-                        <li><a href="/sign-up">Sign up</a></li>
-                        <li><a href="/login">Login</a></li>
-                    </div>
+</head>
+<body  id="top" >
+<nav th:fragment="navbar">
+    <div class="nav-wrapper blue-grey darken-3">
+        <a href="/" class="brand-logo">Ticketsup Logo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <div class="button-group" sec:authorize="!isFullyAuthenticated()">
+                <li><a href="/aboutUs">Info</a></li>
+                <li><a href="/sign-up">Sign up</a></li>
+                <li><a href="/login">Login</a></li>
+            </div>
 
-                    <div class="button-group" sec:authorize="isFullyAuthenticated()">
-                        <li><a href="/">Edit Profile</a></li>
-                        <li><a href="/">Your Orders</a></li>
-                        <li><form th:action="@{/logout}" th:method="post">
-                        <button>Logout</button>
-                        </form></li>
-                    </div>
+            <div class="button-group" sec:authorize="isFullyAuthenticated()">
+                <li><a href="/">Edit Profile</a></li>
+                <li><a href="/">Your Orders</a></li>
+                <li><form th:action="@{/logout}" th:method="post">
+                    <button>Logout</button>
+                </form></li>
+            </div>
+        </ul>
+    </div>
+</nav>
+
+<footer th:fragment="footer" class="page-footer blue-grey darken-3">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
                 </ul>
             </div>
-        </nav>
-
-    <footer th:fragment="footer" class="page-footer blue-grey darken-3">
+        </div>
+    </div>
+    <div class="footer-copyright">
         <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Footer Content</h5>
-                        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-                 </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                    </ul>
-                </div>
-            </div>
+            © 2019 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
         </div>
-        <div class="footer-copyright">
-            <div class="container">
-                © 2019 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
-        </div>
-    </footer>
-    </body>
+    </div>
+</footer>
+</body>
 </html>
