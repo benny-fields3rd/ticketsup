@@ -3,17 +3,11 @@ package com.codeup.ticketsup.Controllers;
 import com.codeup.ticketsup.interfaces.UserRepository;
 import com.codeup.ticketsup.models.User;
 import com.codeup.ticketsup.models.Users;
-import com.codeup.ticketsup.services.UserService;
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class UserController {
@@ -22,13 +16,12 @@ public class UserController {
     private Users users;
     private PasswordEncoder passwordEncoder;
 
-    private UserService userService;
-
     private UserRepository userRepo;
 
-    public UserController(Users users, PasswordEncoder passwordEncoder) {
+    public UserController(Users users, PasswordEncoder passwordEncoder, UserRepository userRepo) {
         this.users = users;
         this.passwordEncoder = passwordEncoder;
+        this.userRepo = userRepo;
     }
 
     @GetMapping("/sign-up")
@@ -46,32 +39,39 @@ public class UserController {
     }
 
     @GetMapping("/profile")
-    public String showUser(User user, Model model){
+    public String showUser(Model model){
         User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User thisUser = userRepo.findOne(currentUser.getId());
         model.addAttribute("user", thisUser);
-        model.addAttribute("sessionUser", userService.loggedInUser());
-        model.addAttribute("showEditControls", userService.canEditProfile(user));
         return "user/showProfile";
     }
 
-    @GetMapping("/user/profile")
-    public String showProfile(Model viewModel){
-        User logUser = userService.loggedInUser();
+    @GetMapping("/editUser")
+    public String getEditUserForm(Model model){
+        User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User thisUser = userRepo.findOne(currentUser.getId());
+        model.addAttribute("user", thisUser);
 
-        if(logUser == null){
-            viewModel.addAttribute("msg", "You need to be logged in to be able to see");
-            return "error/custom";
-        }
-
-        return "redirect:/users/" + userService.loggedInUser().getId();
+        return "user/editProfile";
     }
 
-    @GetMapping("/users/{id}/edit")
-    public String showEditForm(@PathVariable int id, Model viewModel){
-        User user = userRepo.getOne(id);
-        viewModel.addAttribute("user", user);
-        viewModel.addAttribute("showEditControls", userService.canEditProfile(user));
-        return "user/edit";
+    @PostMapping("/editUser")
+    public String editUser(@RequestParam(name = "first_name") String firstname,@RequestParam(name = "last_name") String lastname, @RequestParam(name = "phone") String phone,
+                           @RequestParam(name = "username") String username, @RequestParam(name ="email") String email,
+                           @RequestParam(name = "id") int id, @RequestParam(name = "zip_code") String zip_code , @RequestParam(name = "password") String password
+                          , Model model){
+        User thisUser = userRepo.findOne(id);
+        thisUser.setFirst_name(firstname);
+        thisUser.setLast_name(lastname);
+        thisUser.setPhone(phone);
+        thisUser.setEmail(email);
+        thisUser.setusername(username);
+        thisUser.setZip_code(zip_code);
+        thisUser.setPassword(password);
+        userRepo.save(thisUser);
+
+
+        return "redirect:/profile";
     }
+
 }

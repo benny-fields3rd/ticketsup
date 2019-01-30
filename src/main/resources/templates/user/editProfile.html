@@ -11,29 +11,31 @@
             <h5 class="card-title">Edit Profile</h5>
 
             <!-- Suggest this be in a container and then a card-->
-            <form class="card-text" th:action="@{/users/{id}/edit(id=${id})}" method="POST" th:object="${user}">
+            <form class="card-text" th:action="@{/editUser}" method="POST" th:object="${user}">
                 <label for="first_name">First Name:</label>
-                <input th:field="*{first_name}" />
+                <input name="first_name" id="first_name" th:field="*{first_name}" />
+                <input name="id" type="hidden" th:field="*{id}" />
+
                 <br />
                 <label for="last_name">Last Name:</label>
-                <input th:field="*{last_name}"/>
+                <input id="last_name" name="last_name" th:field="*{last_name}"/>
                 <br />
-                <label>Phone Number:</label>
-                <input th:field="*{phone}" />
+                <label for="phone">Phone Number:</label>
+                <input id="phone" name="phone" th:field="*{phone}" />
                 <br />
-                <label>Email:</label>
-                <input th:field="*{email}"/>
+                <label for="email">Email:</label>
+                <input id="email" name="email" th:field="*{email}"/>
                 <br />
-                <label>Zipcode:</label>
-                <input th:field="*{zip_code}" />
+                <label for="zip_code">Zipcode:</label>
+                <input id="zip_code" name="zip_code" th:field="*{zip_code}" />
                 <br />
-                <label>Username:</label>
-                <input th:field="*{username}"/>
+                <label for="username">Username:</label>
+                <input id="username" name="username" th:field="*{username}"/>
                 <br />
                 <label for="password">Password:</label>
-                <input type="password" th:field="*{password}"/>
+                <input id="password" name="password" th:type="password" th:field="*{password}"/>
                 <br />
-                <input th:if="${showEditControls}" class="btn" type="submit" />
+                <input class="btn" type="submit" />
             </form>
         </div>
     </div>

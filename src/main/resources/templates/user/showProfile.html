@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html  xmlns:th="http://www.thymeleaf.org">
-<head th:replace="partials::head('Show Profile')"></head>
+<head th:replace="partials::head('Profile')"></head>
 
 <body>
 
@@ -20,7 +20,7 @@
                     </p>
 
                     <p>
-                        Username: <span class="title" th:text="${user.username}"></span>
+                        Username: <span class="title" th:text="${user.getusername()}"></span>
                     </p>
 
                     <p>
@@ -31,13 +31,8 @@
                         Email: <span th:text="${user.phone}"></span>
                     </p>
 
-                    <p>
-                        Last Name: <span class="title" th:text="${user.last_name}"></span>
-                    </p>
                     <div>
-                        <a class="waves-effect waves-light btn" th:href="@{user/user-order-list}">View Orders</a>
-                        <a th:if="${showEditControls}" class="waves-effect waves-light btn" th:href="@{/users/{id}/edit(id=${user.id})}">Edit Profile</a>
-                        <a class="waves-effect waves-light btn" th:href="@{user/editProfile}">Edit Profile</a>
+                        <a class="waves-effect waves-light btn" th:href="@{/editUser}">Edit Profile</a>
                     </div>
             </div>
         </div>
