@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="parials :: header(${error})"></head>
+<body>
+
+<div th:replace="partials :: navbar"></div>
+
+<div class="container-fluid error">
+    <div class="row">
+        <div class="col 12 center">
+            <p class="alert alert-danger" th:text="${msg}"></p>
+        </div>
+    </div>
+</div>
+
+<div th:replace="partials :: footer"></div>
+
+</body>
+</html>

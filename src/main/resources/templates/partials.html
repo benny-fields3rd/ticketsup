@@ -26,7 +26,7 @@
     <div class="nav-wrapper">
         <a href="/" class="brand-logo">Logo</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="sass.html">Sass</a></li>
+            <li><a th:href="@{/profile}">Profile</a></li>
             <li>
             <div class="button-group" sec:authorize="!isFullyAuthenticated()">
                 <a href="/login">Login</a>
