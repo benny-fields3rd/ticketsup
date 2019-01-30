@@ -82,7 +82,7 @@ $(document).ready(() => {
 
     $(document).on('click', '.movieBtn', function(){
         let id = $(this).parent().prop("id");
-        console.log(id);
+
         sessionStorage.setItem('movieId', id);
         window.location = '/movie/'+id;
         return false;
@@ -96,7 +96,7 @@ function getMovie() {
         url: ('https://api.themoviedb.org/3/movie/'+ movieId + '?api_key=' + apiKey + '&language=en-US') ,
         type: "get",
         success: function (results) {
-            console.log(results);
+
             let output = `
        
         <div class="row">
@@ -159,7 +159,6 @@ getMovie();
         $(".foodPrice").each(function () {
             totalFoodPrice += parseInt(value($(".foodPrice")));
         });
-        console.log(totalFoodPrice);
         let orderTotal = (parseInt(ticketsTotal) * 7) + totalFoodPrice;
         console.log(orderTotal);
         $("#total").text(orderTotal);
