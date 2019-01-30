@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials::head('Profile')"></head>
+
+<body>
+
+<div th:replace="partials :: navbar"></div>
+
+<form th:action="@{/profile}" method="post" th:object="${user}">
+    <h2>Welcome to Your Profile</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col 12">
+                    <p>
+                        First Name: <span class="title" th:text="${user.first_name}"></span>
+                    </p>
+
+                    <p>
+                        Last Name: <span class="title" th:text="${user.last_name}"></span>
+                    </p>
+
+                    <p>
+                        Username: <span class="title" th:text="${user.getusername()}"></span>
+                    </p>
+
+                    <p>
+                        Email: <span th:text="${user.email}"></span>
+                    </p>
+
+                    <p>
+                        Email: <span th:text="${user.phone}"></span>
+                    </p>
+
+                    <div>
+                        <a class="waves-effect waves-light btn" th:href="@{/editUser}">Edit Profile</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<div th:replace="partials :: footer"></div>
+
+</body>
+</html>
