@@ -4,18 +4,12 @@
     <body>
         <div th:replace="partials::header"></div>
         <div th:replace="partials::navbar"></div>
-    <main role="main" class="container">
 
-        <div class="row">
-
-                <img th:src="@{/img/errorScreen.jpg}" />
-
-                <h1>Oops! Looks like the page is not found!</h1>
-
-
+        <div class="errorImage">
+            <img  id="screen" th:src="@{/img/errorScreen.jpg}" alt="error page on movie screen" />
+            <h1 id="error-text"><span id="error-span">It's not you. It's us.<br/>Try again, please.</span></h1>
         </div>
 
-    </main><!-- /.container -->
         <div th:replace="partials::footer"></div>
     </body>
 </html>

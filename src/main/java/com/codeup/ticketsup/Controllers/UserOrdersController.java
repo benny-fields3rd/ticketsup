@@ -22,7 +22,6 @@ public class UserOrdersController {
         model.addAttribute("user_id" , id);
         model.addAttribute("user_orders" , orderRepository.findAllByUser(userRepository.findOne(id)) );
 
-
         return "user/user-order-list";
     }
 }
