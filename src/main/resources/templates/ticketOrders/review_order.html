@@ -10,6 +10,7 @@
 
     <form th:action="@{/orderSubmited}" class="formSendEmail" th:method="post" th:object="${order}">
         <input type="hidden" class="hiddenOrderNum" name="order_id" th:value="${order_id}" />
+
         <!--<input  id="QrHidden" name="order_id" th:value="'https://api.qrserver.com/v1/create-qr-code/?data='+ ${order_id} +'&amp;size=100x100'"/>-->
 
         <table class="responsive-table">
@@ -46,17 +47,20 @@
 
         <button class="orderPlaced" type="submit" value="Send" >Place Order</button>
         </form>
+
 </div>
 <footer th:replace="partials :: footer" />
+
 <script>
-    $(document).ready(function(e) {
+    $(document).ready(function() {
             let idValue = $(".hiddenOrderNum").val();
             let qrlink = 'https://api.qrserver.com/v1/create-qr-code/?data=' + idValue + '&amp;size=100x100';
 
         console.log(idValue);
         console.log(qrlink);
 
-        $('.formSendEmail').submit(function() {
+
+        $('.formSendEmail').submit(function(e) {
 
 
             $.ajax({
@@ -65,7 +69,7 @@
                     data: { message :qrlink },
                     datatype: 'json'
                 });
-            e.preventDefault()
+
 
 
         });
