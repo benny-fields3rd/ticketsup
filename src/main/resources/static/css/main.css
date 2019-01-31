@@ -11,6 +11,7 @@ body , html{
 
 .card {
     overflow: visible;
+    background-color: var(--light--color);
 }
 
 .card-title {
@@ -48,9 +49,6 @@ body , html{
     padding: 10px;
 }
 
-.btn {
-    color: #D3F3EE;
-}
 
 .slider .indicators .indicator-item.active {
     background-color: var(--redch-color);
@@ -58,6 +56,7 @@ body , html{
 .tabs .tab a.active {
     color: var(--redch-color);
 }
-.movieBtn{
+.movieBtn .btn{
     background-color: var(--charcoal-color);
+    color: var(--light--color);
 }

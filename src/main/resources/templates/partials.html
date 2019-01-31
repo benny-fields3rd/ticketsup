@@ -7,11 +7,11 @@
 
     <link rel="stylesheet" href="/css/form.css"  />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Martel+Sans" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Martel+Sans" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <script src="https://js.stripe.com/v3/"></script>
     <!--<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/130527/qrcode.js"></script>-->
     <script src="/js/qrCode.js"></script>
@@ -20,50 +20,50 @@
 
 </head>
 <body  id="top" >
-<nav th:fragment="navbar">
-    <div class="nav-wrapper blue-grey darken-3">
-        <a href="/" class="brand-logo "><img height="60" src="/img/ticketups logo.png" /></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <div class="button-group" sec:authorize="!isFullyAuthenticated()">
-                <li><a href="/aboutUs">Info</a></li>
-                <li><a href="/sign-up">Sign up</a></li>
-                <li><a href="/login">Login</a></li>
-            </div>
+    <nav th:fragment="navbar">
+        <div class="nav-wrapper blue-grey darken-3">
+            <a href="/" class="brand-logo "><img height="60" src="/img/ticketups logo.png" /></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <div class="button-group" sec:authorize="!isFullyAuthenticated()">
+                    <li><a href="/aboutUs">Info</a></li>
+                    <li><a href="/sign-up">Sign up</a></li>
+                    <li><a href="/login">Login</a></li>
+                </div>
 
-            <div class="button-group" sec:authorize="isFullyAuthenticated()">
-                <li><a href="/profile">Profile</a></li>
-                <li><a href="/">Your Orders</a></li>
-                <li><form th:action="@{/logout}" th:method="post">
-                    <a>Logout</a>
-                </form></li>
-            </div>
-        </ul>
-    </div>
-</nav>
-
-<footer th:fragment="footer" class="page-footer blue-grey darken-3">
-    <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text"> Ticketup</h5>
-                <p class="grey-text text-lighten-4">A Codeup capstone project was made by 3 students implemented using spring boot.</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Policy</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">FQ</a></li>
-                </ul>
-            </div>
+                <div class="button-group" sec:authorize="isFullyAuthenticated()">
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/">Your Orders</a></li>
+                    <li><form th:action="@{/logout}" th:method="post">
+                        <a>Logout</a>
+                    </form></li>
+                </div>
+            </ul>
         </div>
-    </div>
-    <div class="footer-copyright">
+    </nav>
+
+    <footer th:fragment="footer" class="page-footer blue-grey darken-3">
         <div class="container">
-            © 2019 Copyright Ticketsup
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text"> Ticketup</h5>
+                    <p class="grey-text text-lighten-4">A Codeup capstone project was made by 3 students implemented using spring boot.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Policy</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">FQ</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div>
-</footer>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2019 Copyright Ticketsup
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
