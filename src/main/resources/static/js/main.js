@@ -153,11 +153,19 @@ getMovie();
 
     function totalCal() {
 
-        let ticketsTotal = value($(".ticketsTotal"));
+        let ticketsTotal = $(".ticketsTotal").text();
+        console.log(ticketsTotal);
+
         let totalFoodPrice = 0;
         $(".foodPrice").each(function () {
-            totalFoodPrice += parseInt(value($(".foodPrice")));
+            let priceStr= $(".foodPrice").text();
+
+            let priceNum = priceStr.slice(1);
+
+            totalFoodPrice += parseInt(priceNum);
+
         });
+
         let orderTotal = (parseInt(ticketsTotal) * 7) + totalFoodPrice;
         console.log(orderTotal);
         $("#total").text(orderTotal);
