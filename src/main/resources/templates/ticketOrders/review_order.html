@@ -44,22 +44,18 @@
 
                 </tbody>
             </table>
-        <button class="orderPlaced" type="submit" value="Send" >Place Order</button>
-        </form>
+        <script
+                th:method="POST"
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="pk_test_ETPXIrl9MBozBoNejhJzk3ja"
+                data-name="Ticketsup"
+                data-description='Theater tickets'
+                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                data-locale="auto"
+                data-zip-code="true">
+        </script>
+    </form>
 
-            <form>
-                <script
-                        th:method="POST"
-                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                        data-key="pk_test_ETPXIrl9MBozBoNejhJzk3ja"
-                        th:attr="data-amount=${order_id}"
-                        data-name="Ticketsup"
-                        data-description='Theater tickets'
-                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                        data-locale="auto"
-                        data-zip-code="true">
-                </script>
-            </form>
 </div>
 <footer th:replace="partials :: footer" />
 
@@ -70,6 +66,11 @@
 
         console.log(idValue);
         console.log(qrlink);
+
+        $(document).on(".Section-button button" , "submit" , function () {
+            $('.formSendEmail').submit()
+        })
+
 
 
         $('.formSendEmail').submit(function(e) {
@@ -85,6 +86,7 @@
 
 
         });
+
     });
 </script>
 </body>
