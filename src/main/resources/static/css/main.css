@@ -7,6 +7,7 @@
 body , html{
     font-family: ‘Martel Sans’, sans-serif;
     margin: 0;
+    background-color: #d3f3ee;
 }
 
 .card {
@@ -25,6 +26,26 @@ body , html{
     position: relative;
     width: 100%;
     /* for IE 6 */
+}
+#singleBtn {
+    float: right;
+}
+
+#btn1{
+    background-color: var(--charcoal-color);
+}
+
+#poster {
+    position: absolute;
+    top: 20%;
+
+}
+#movieInfo{
+    font-family: ‘Martel Sans’, sans-serif;
+}
+
+#datePicker{
+    margin: 15px 0 8px 0;
 }
 
 #screen {
@@ -61,3 +82,4 @@ body , html{
 .movieBtn{
     background-color: var(--charcoal-color);
 }
+
