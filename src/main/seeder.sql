@@ -18,8 +18,8 @@ INSERT INTO food (name, price) VALUES
                                       ('pizza', 5.00),
                                       ('hot-dogs', 5.00),
                                       ('nachos', 5.00),
-                                      ('popcorn', 5.00),
-                                      ('fries', 5.00);
+                                      ('popcorn', 5.00);
+
 
 INSERT INTO status (status) VALUES
                                 ('Movie Selection'), ('Seats Selection'), ('Food Selection'), ('Review The Order'), ('Order Placed');
