@@ -7,10 +7,12 @@
 body , html{
     font-family: ‘Martel Sans’, sans-serif;
     margin: 0;
+    background-color: #d3f3ee;
 }
 
 .card {
     overflow: visible;
+    background-color: var(--light--color);
 }
 
 .card-title {
@@ -25,6 +27,26 @@ body , html{
     position: relative;
     width: 100%;
     /* for IE 6 */
+}
+#singleBtn {
+    float: right;
+}
+
+#btn1{
+    background-color: var(--charcoal-color);
+}
+
+#poster {
+    position: absolute;
+    top: 20%;
+
+}
+#movieInfo{
+    font-family: ‘Martel Sans’, sans-serif;
+}
+
+#datePicker{
+    margin: 15px 0 8px 0;
 }
 
 #screen {
@@ -48,9 +70,6 @@ body , html{
     padding: 10px;
 }
 
-.btn {
-    color: #D3F3EE;
-}
 
 .slider .indicators .indicator-item.active {
     background-color: var(--redch-color);
@@ -58,6 +77,9 @@ body , html{
 .tabs .tab a.active {
     color: var(--redch-color);
 }
-.movieBtn{
+.movieBtn .btn{
     background-color: var(--charcoal-color);
+    color: var(--light--color);
 }
+
+

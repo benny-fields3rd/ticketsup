@@ -7,55 +7,55 @@
 
     <div class="container">
         <!--//MOVIE CONTENT WILL BE DISPLAYED IN THIS CONTAINER//-->
-      <form th:action="@{/order}" th:method="post" th:object="${order}">
-        <div id="movie" class="well">
-            /*single movie api*/
-        </div>
-            <input type="hidden" name="movies_id" th:value="${movies_id}"/>
-          <h2>Select Date and Time</h2>
-        <div class="row">
-            <div class="col s8">
-            <!--CALENDER AND DATE WILL SHOW UP HERE-->
-            <input id="date" th:field="*{order_date}" type="text" placeholder="Select Date" class="datepicker" />
+        <form th:action="@{/order}" th:method="post" th:object="${order}">
+            <div class="row">
+                <div id="movie" class="well">
+                /*single movie api*/
+                </div>
+                <input type="hidden" name="movies_id" th:value="${movies_id}"/>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="input-field col s8">
-                <select id="movieTime" th:field="*{movie_time}">
-                    <option value="" class="disabled selected">Choose your time</option>
-                    <option value="8:02a">8:02am</option>
-                    <option value="11:20am">11:20am</option>
-                    <option value="2:35pm">2:35pm</option>
-                    <option value="5:45pm">5:45pm</option>
-                    <option value="8:35p">8:35pm</option>
-                </select>
-                <label>Please select a time</label>
+            <h2>Find Showtimes</h2>
+            <div class="row">
+                <div id="datePicker" class="col s12 l4">
+                <!--CALENDER AND DATE WILL SHOW UP HERE-->
+                    <input th:field="*{order_date}" type="text" placeholder="Select Date" class="datepicker" />
+                </div>
+                <div class="input-field col s12 l4">
+                    <select id="movieTime" th:field="*{movie_time}">
+                        <option value="" class="disabled selected">Choose your time</option>
+                        <option value="8:02a">8:02am</option>
+                        <option value="11:20am">11:20am</option>
+                        <option value="2:35pm">2:35pm</option>
+                        <option value="5:45pm">5:45pm</option>
+                        <option value="8:35p">8:35pm</option>
+                    </select>
+                    <label>Please select a time</label>
+                </div>
+                <div class="input-field col s12 l4">
+                    <select id="totalTickets" th:field="*{total_tickets}">
+                        <option class="disabled selected" value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="5">6</option>
+                        <option value="5">7</option>
+                        <option value="5">8</option>
+                    </select>
+                    <label>Please select amount :<small>$7.00 each</small> </label>
+                </div>
+            </div><!--CLOSES SECOND ROW-->
+            <div class="row">
+                <div class="col 12" id="singleBtn">
+                    <button id="btn1" class="btn waves-effect waves-light right" type="submit" >Next</button>
+                </div>
             </div>
-            <div class="input-field col s4">
-                <select id="totalTickets" th:field="*{total_tickets}">
-                    <option class="disabled selected" value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="5">6</option>
-                    <option value="5">7</option>
-                    <option value="5">8</option>
-                </select>
-                <label>Please select amount :<small>$7.00 each</small> </label>
-            </div>
-        </div>
-
-        <button id="btn1" class="btn waves-effect waves-light" type="submit">Next</button>
-      </form>
+        </form>
 
     </div>
-
-
-    <!--hello-->
-
-
+    <br/>
+    <br/>
 
     <footer th:replace="partials :: footer" />
 
