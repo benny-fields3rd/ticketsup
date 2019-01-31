@@ -77,7 +77,11 @@ body , html{
 .tabs .tab a.active {
     color: var(--redch-color);
 }
-.movieBtn .btn{
+/*.movieBtn {*/
+
+/*}*/
+
+.btn{
     background-color: var(--charcoal-color);
     color: var(--light--color);
 }

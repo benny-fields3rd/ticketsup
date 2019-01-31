@@ -74,4 +74,9 @@ public class UserController {
         return "redirect:/profile";
     }
 
+    @GetMapping("/about-us")
+    public String aboutUs(Model model){
+        return "about-us";
+    }
+
 }
