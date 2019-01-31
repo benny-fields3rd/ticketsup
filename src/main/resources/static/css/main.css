@@ -1,3 +1,14 @@
+:root {
+    --charcoal-color:  #36474f;
+    --redch-color: #d44f54;
+    --light--color: #d3f3ee;
+}
+
+body , html{
+    font-family: ‘Martel Sans’, sans-serif;
+    margin: 0;
+}
+
 .card {
     overflow: visible;
 }
@@ -39,4 +50,14 @@
 
 .btn {
     color: #D3F3EE;
+}
+
+.slider .indicators .indicator-item.active {
+    background-color: var(--redch-color);
+}
+.tabs .tab a.active {
+    color: var(--redch-color);
+}
+.movieBtn{
+    background-color: var(--charcoal-color);
 }

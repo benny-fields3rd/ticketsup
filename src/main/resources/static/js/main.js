@@ -29,9 +29,9 @@ $(document).ready(() => {
                         let imgLink = result.results[i].poster_path;
                         console.log(movieId);
 
-                        htmlForNowShowingMovies += `<div id="${movieId}" class="col m4 l3 center-align singleMovie">
+                        htmlForNowShowingMovies += `<div id="${movieId}" class="col s2  m4 l3 center-align singleMovie">
                                     <img src='${imgPath + imgLink}'  class="imgPoster">
-                             <a class="  waves-effect waves-light grey darken-4 btn movieBtn" >Book Movie</a>
+                             <a class="  waves-effect waves-light btn movieBtn" >Book Movie</a>
                                 </div>
                         
                         `
@@ -59,9 +59,9 @@ $(document).ready(() => {
                     for (let i = 0 ; i < 15 ; i++){
 
                         let imgLink = result.results[i].poster_path;
-                        htmlForUpComingMovies += `<div  id="${result.results[i].id}" class="col m4 l3">
+                        htmlForUpComingMovies += `<div  id="${result.results[i].id}" class="col s2 m4 l3">
                                     <img src='${imgPath + imgLink}'  class="imgPoster">
-                                    <a class="waves-effect waves-light grey darken-4 btn movieBtn"  >Movie Details</a>
+                                    <a class="waves-effect waves-light  btn movieBtn"  >Movie Details</a>
                                 </div>
                         `
 
@@ -153,11 +153,19 @@ getMovie();
 
     function totalCal() {
 
-        let ticketsTotal = value($(".ticketsTotal"));
+        let ticketsTotal = $(".ticketsTotal").text();
+        console.log(ticketsTotal);
+
         let totalFoodPrice = 0;
         $(".foodPrice").each(function () {
-            totalFoodPrice += parseInt(value($(".foodPrice")));
+            let priceStr= $(".foodPrice").text();
+
+            let priceNum = priceStr.slice(1);
+
+            totalFoodPrice += parseInt(priceNum);
+
         });
+
         let orderTotal = (parseInt(ticketsTotal) * 7) + totalFoodPrice;
         console.log(orderTotal);
         $("#total").text(orderTotal);
