@@ -101,11 +101,11 @@ function getMovie() {
        
         <div class="row">
           <div class="col s12 m4">
-            <img src="${imgPath + results.poster_path}" class="thumbnail">
+            <img id="poster" src="${imgPath + results.poster_path}" class="thumbnail">
           </div>
           <div class="col s12 m8">
             <h2>${results.title}</h2>
-            <ul class="list-group">
+            <ul id="movieInfo" class="list-group">
               <li class="list-group-item"><strong>Genre:</strong> ${results.genres[0].name}</li>
               <li class="list-group-item"><strong>Released:</strong> ${results.release_date}</li>
               <li class="list-group-item"><strong>Rated:</strong> ${results.vote_average}</li>
@@ -113,10 +113,9 @@ function getMovie() {
               <li class="list-group-item">${movieId}</li>
             </ul>
             <div class="well">
-            <h3>Plot</h3>
+            <h4>Summary</h4>
             ${results.overview}
-          </div>
-            </form>
+            </div>
           </div>
         </div>
      
