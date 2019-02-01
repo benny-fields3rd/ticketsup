@@ -10,12 +10,13 @@ body , html{
     background-color: #d3f3ee;
 }
 
+h3 {
+    font-size: 60px;
+
+}
 .card {
     overflow: visible;
     background-color: var(--light--color);
-}
-#foodCard {
-    background-color: white;
 }
 
 .card-title {
@@ -31,6 +32,10 @@ body , html{
     width: 100%;
     /* for IE 6 */
 }
+.card-action {
+    color: #d44f54;
+}
+
 #singleBtn {
     float: right;
 }
@@ -72,6 +77,14 @@ body , html{
     /*background: rgba(0, 0, 0, 0.7);*/
     padding: 10px;
 }
+#foodCard {
+    background-color: white;
+}
+
+/*#tabs-swipe-demo {*/
+    /*background-color: #d44f54;*/
+    /*color: black;*/
+/*}*/
 
 
 .slider .indicators .indicator-item.active {
@@ -89,6 +102,10 @@ body , html{
     color: var(--light--color);
 }
 
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+    color: #D44F54;
+    margin: 10px;
+}
 body {
     display: flex;
     min-height: 100vh;
@@ -97,6 +114,7 @@ body {
 
 main {
     flex: 1 0 auto;
+
 }
 
 
