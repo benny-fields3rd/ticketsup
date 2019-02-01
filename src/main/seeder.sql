@@ -21,7 +21,4 @@ INSERT INTO food (name, price) VALUES
                                       ('popcorn', 5.00);
 
 INSERT INTO status (status) VALUES
-                                ('Movie Selection'), ('Seats Selection'), ('Food Selection'), ('Review The Order'), ('Order Placed');
-
-INSERT INTO users (is_admin , email , first_name , last_name , password , phone , username , zip_code) values
-(true , 'admin' ,'admin' , 'admin' ,'admin' ,'admin' , 'admin' , 'admin')
+                                ('Movie Selection'), ('Seats Selection'), ('Food Selection'),  ('Order Placed');

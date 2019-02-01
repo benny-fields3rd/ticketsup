@@ -14,8 +14,10 @@
                             <th>Order Id</th>
                             <th>Movie Id</th>
                             <th>Movie Date</th>
-                            <th>Number of Movie Tickets</th>
+                            <th>Amount</th>
                             <th>Status</th>
+                            <th> </th>
+
                         </tr>
                     </thead>
 
@@ -27,6 +29,21 @@
                                 <td th:text="${order.getOrder_date()}"></td>
                                 <td th:text="${order.getTotal_tickets()}"></td>
                                 <td th:text="${order.getStatus().status}"></td>
+                                <td width="250px">
+                                    <div th:if="${order.getStatus().getId() == 1}" class="progress">
+                                    <div class="determinate" style="width: 40%"></div>
+                                     </div>
+                                    <div th:if="${order.getStatus().getId() == 2}" class="progress">
+                                        <div class="determinate" style="width: 60%"></div>
+                                    </div>
+                                    <div th:if="${order.getStatus().getId() == 3}" class="progress">
+                                        <div class="determinate" style="width: 80%"></div>
+                                    </div>
+                                    <div th:if="${order.getStatus().getId() == 4}" class="progress">
+                                        <div class="determinate" style="width: 100%"></div>
+                                    </div>
+                                </td>
+
                             </tr>
                         </div>
                     </tbody>
