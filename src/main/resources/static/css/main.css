@@ -14,6 +14,9 @@ body , html{
     overflow: visible;
     background-color: var(--light--color);
 }
+#foodCard {
+    background-color: white;
+}
 
 .card-title {
     font-weight: bolder;
@@ -81,9 +84,11 @@ body , html{
 
 /*}*/
 
-.btn{
+.btn {
     background-color: var(--charcoal-color);
     color: var(--light--color);
 }
+
+
 
 
