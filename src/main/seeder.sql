@@ -20,6 +20,5 @@ INSERT INTO food (name, price) VALUES
                                       ('nachos', 5.00),
                                       ('popcorn', 5.00);
 
-
 INSERT INTO status (status) VALUES
                                 ('Movie Selection'), ('Seats Selection'), ('Food Selection'), ('Review The Order'), ('Order Placed');
