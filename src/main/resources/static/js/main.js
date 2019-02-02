@@ -60,7 +60,7 @@ $(document).ready(() => {
 
                         let imgLink = result.results[i].poster_path;
                         htmlForUpComingMovies += `<div  id="${result.results[i].id}" class="col s2 m4 l3">
-                                    <img src='${imgPath + imgLink}'  class="imgPoster">
+                                    <img src='${imgPath + imgLink}'  class="imgPoster" />
                                     <a class="waves-effect waves-light  btn movieBtn"  >Movie Details</a>
                                 </div>
                         `
@@ -91,36 +91,53 @@ $(document).ready(() => {
 
 function getMovie() {
     let movieId = sessionStorage.getItem('movieId');
+    const imgPathP ="https://image.tmdb.org/t/p/original";
+    const imgPathSmall ="https://image.tmdb.org/t/p/w200";
+
+
+
 
     $.ajax({
         url: ('https://api.themoviedb.org/3/movie/'+ movieId + '?api_key=' + apiKey + '&language=en-US') ,
         type: "get",
         success: function (results) {
 
+        let imgLink = results.poster_path;
+            let poster = `
+          <div  style="background: linear-gradient(0deg, rgb(0, 0, 0) 5%, rgba(0, 0, 0, 0.45) 92%) center center no-repeat, url( ${imgPathP + results.poster_path}) center top no-repeat rgb(255, 255, 255); height: 100%">
+             <div class="container miniMovie" style="height: 100%">
+               <div class="row">
+
+                        <div class="col s4">
+                            <img src='${imgPathSmall + imgLink}' style="    height: 170px;" id="imgPoster" />
+                        </div>
+                        <div class="col s8">
+                        <h5>${results.title}</h5>
+
+                        <ul id="movieInfo" class="list-group">
+                          <li class="list-group-item"><strong>Genre:</strong> ${results.genres[0].name}</li>
+                          <li class="list-group-item"><strong>Released:</strong> ${results.release_date}</li>
+                          <li class="list-group-item"><strong>Rated:</strong> ${results.vote_average}</li>
+                         
+                        </ul>
+                       
+                    </div>
+                </div>
+
+            </div>
+
+          </div>`;
+
             let output = `
        
-        <div class="row">
-          <div class="col s12 m4">
-            <img id="poster" src="${imgPath + results.poster_path}" class="thumbnail">
-          </div>
-          <div class="col s12 m8">
-            <h2>${results.title}</h2>
-            <ul id="movieInfo" class="list-group">
-              <li class="list-group-item"><strong>Genre:</strong> ${results.genres[0].name}</li>
-              <li class="list-group-item"><strong>Released:</strong> ${results.release_date}</li>
-              <li class="list-group-item"><strong>Rated:</strong> ${results.vote_average}</li>
-              <li class="list-group-item"><strong>Production Company:</strong> ${results.production_companies[0].name}</li>
-              <li class="list-group-item">${movieId}</li>
-            </ul>
+       
             <div class="well">
-            <h4>Summary</h4>
+            <h4>SUMMARY</h4>
             ${results.overview}
-            </div>
-          </div>
-        </div>
-     
         
-      `;
+        </div>`;
+
+            $("#moviePoster").html(poster);
             $('#movie').html(output);
         },
         error : function (er) {
@@ -170,6 +187,9 @@ getMovie();
         $("#total").text(orderTotal);
     }
     totalCal()
+
+    //SEAT
+
 
 
 });
