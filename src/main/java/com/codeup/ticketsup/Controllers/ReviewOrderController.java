@@ -1,9 +1,11 @@
 package com.codeup.ticketsup.Controllers;
 
 import com.codeup.ticketsup.interfaces.OrderRepository;
+import com.codeup.ticketsup.interfaces.StatusRepository;
 import com.codeup.ticketsup.interfaces.UserRepository;
 import com.codeup.ticketsup.models.Food;
 import com.codeup.ticketsup.models.Order;
+import com.codeup.ticketsup.models.Status;
 import com.codeup.ticketsup.models.User;
 import com.codeup.ticketsup.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,8 @@ ReviewOrderController {
     OrderService orderService;
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    StatusRepository statusRepository;
 
     @GetMapping("/review/{id}")
     public String movie(@PathVariable int id, Model model) {
@@ -52,6 +56,9 @@ ReviewOrderController {
         User currentUser = userRepository.findOne(authenticatedUser.getId());
         Order currentorder = orderRepository.findOne(order);
         currentorder.setUser(currentUser);
+        Status status4 = statusRepository.findOne(4);
+
+        currentorder.setStatus(status4);
         orderRepository.save(currentorder);
 
         return "redirect:orders/user/"+ currentUser.getId();

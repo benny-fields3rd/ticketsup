@@ -101,10 +101,19 @@ h3 {
     background-color: var(--charcoal-color);
     color: var(--light--color);
 }
-
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
     color: #D44F54;
     margin: 10px;
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+
 }
 
 

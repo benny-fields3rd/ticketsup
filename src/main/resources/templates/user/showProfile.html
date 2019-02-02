@@ -6,11 +6,29 @@
 
 <div th:replace="partials :: navbar"></div>
 
-<form th:action="@{/profile}" method="post" th:object="${user}">
-    <h2>Welcome to Your Profile</h2>
-    <div class="container">
-        <div class="row">
-            <div class="col 12">
+<div class="card z-depth-5">
+    <div class="card-body">
+        <h5 class="card-title">Welcome to Your Profile</h5>
+
+            <form class="card-text" th:action="@{/profile}" method="post" th:object="${user}">
+                <div class="input-field col s12">
+                    <input id="disabled" type="text" class="validate">
+                    <label for="disabled">Disabled</label>
+                </div>
+                    <!--<label>First Name:</label>-->
+                    <!--<input th:field="*{first_name}" />-->
+                    <!--<br />-->
+                    <!--<label>Last Name:</label>-->
+                    <!--<input th:field="*{last_name}"/>-->
+                    <!--<br />-->
+                    <!--<label>Phone Number:</label>-->
+                    <!--<input th:field="*{phone}" />-->
+                    <!--<br />-->
+                    <!--<label>Email:</label>-->
+                    <!--<input th:field="*{email}"/>-->
+                    <br />
+
+            </div>
                     <p>
                         First Name: <span class="title" th:text="${user.first_name}"></span>
                     </p>
