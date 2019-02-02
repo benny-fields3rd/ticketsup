@@ -7,30 +7,38 @@
 
 <div class="container">
 
-    <h2>Choose your Seats</h2>
+    <h2 class="center-align">Choose your Seats</h2>
 
 
     <div class="row">
-    <div>FRONT OF SCREEN GOES HERE</div>
-    </div>
+    <div class="center-align screen">FRONT OF SCREEN</div>
 
     <!--THIS WILL BE THE SEAT SELECTION AREA-->
 
     <!--THIS IS THE START OF THE FIRST ROW -->
  <form th:action="@{/seats}" th:method="post" th:object="${seats}">
      <input type="hidden" name="order_id" th:value="${order_id}" />
-    <div class="row">
+    <div class="row seatSection">
 
-        <div th:each="seat : ${seats}" class="col s1">
+        <div class="col s8 offset-s2">
+
+        <div th:each="seat : ${seats}" class="col s1.5 ">
+            <div class="seat">
+
             <label>
                 <input type="checkbox" name="seats" th:value="${seat.id}" class="filled-in" />
                 <span th:text="${seat.name}"></span>
             </label>
+            </div>
+        </div>
+
         </div>
     </div> <!--END OF THE ELEVENTH ROW-->
 
-    <button class="btn waves-effect waves-light" type="submit" >Submit</button>
+    <button class="btn waves-effect waves-light right" type="submit" >Submit</button>
+
     </form>
+    </div>
 
 </div>
 <footer th:replace="partials :: footer" />

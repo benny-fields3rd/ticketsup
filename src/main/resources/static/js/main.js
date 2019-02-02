@@ -171,5 +171,8 @@ getMovie();
     }
     totalCal()
 
+    //SEAT
+
+
 
 });
