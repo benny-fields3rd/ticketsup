@@ -5,17 +5,18 @@
 <body>
     <div th:replace="partials::navbar"></div>
 
+    <div id="moviePoster"></div>
     <div class="container">
         <!--//MOVIE CONTENT WILL BE DISPLAYED IN THIS CONTAINER//-->
         <form th:action="@{/order}" th:method="post" th:object="${order}">
             <div class="row">
-                <div id="movie" class="well">
+                <div id="movie" class="well col s12">
                 /*single movie api*/
                 </div>
                 <input type="hidden" name="movies_id" th:value="${movies_id}"/>
             </div>
 
-            <h2>Find Showtimes</h2>
+            <h4>SELECT SHOWTIME</h4>
             <div class="row">
                 <div id="datePicker" class="col s12 l4">
                 <!--CALENDER AND DATE WILL SHOW UP HERE-->
@@ -48,7 +49,7 @@
             </div><!--CLOSES SECOND ROW-->
             <div class="row">
                 <div class="col 12" id="singleBtn">
-                    <button id="btn1" class="btn waves-effect waves-light right" type="submit" >Next</button>
+                    <button id="btn1" class="btn waves-effect waves-light right" type="submit" >SELECT SEATS</button>
                 </div>
             </div>
         </form>
