@@ -156,7 +156,9 @@ getMovie();
    // if (date.val() == null && time.val() == null) {
    //  $('#btn1').removeAttr(disabled);
    // }
-
+    $(document).ready(function(){
+        $('.sidenav').sidenav();
+    });
 
     $(document).ready(function(){
         $('.datepicker').datepicker();
@@ -186,7 +188,8 @@ getMovie();
         console.log(orderTotal);
         $("#total").text(orderTotal);
     }
-    totalCal()
+    totalCal();
+
 
     //SEAT
 
