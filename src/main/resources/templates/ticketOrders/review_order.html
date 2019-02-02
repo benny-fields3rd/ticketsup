@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col s6 offset-s3">
             <div class="card z-depth-5">
-                <div class="card-content">
+                <div class="card-content checkoutCard">
     <form th:action="@{/orderSubmited}" class="formSendEmail" th:method="post" th:object="${order}">
         <input type="hidden" class="hiddenOrderNum" name="order_id" th:value="${order_id}" />
 
