@@ -13,7 +13,7 @@ nav ul a {
     font-size: 1.5rem;
     font-family: 'Roboto Condensed', sans-serif;
 }
-nav ul a:hover{
+nav ul a:hover , nav ul button:hover{
     color: var(--redch-color);
 }
 h3 {
@@ -123,7 +123,7 @@ main {
 }
 
 .imgBtmIndex{
-    border-radius: 33%;
+    border-radius: 16%;
     margin: auto 5%;
 }
 h4{
@@ -184,7 +184,7 @@ h4{
     font-size: large;
 }
 #moviePoster{
-    height: 37.5em;
+    height: 45em;
 }
 .miniMovie{
     padding: 29% 18%;
@@ -202,4 +202,181 @@ h4{
     margin: 30px 0;
     font-size: x-large;
     font-weight: bold;
+}
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+    display: inline;
+    position: relative;
+    top: 3px;
+    color: #d05658;
+
+}
+
+i.Tiny {
+    position: relative;
+    top: 7px;
+}
+i.small {
+    position: relative;
+    top: 3px;
+}
+.extraOnIndex{
+    color:#384750;
+}
+#logout{
+    background: transparent;
+    color: #fffff7;
+    font-size: 1.5rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    border-style: none;
+}
+
+/*index seats*/
+
+.showSeats{
+    position: relative;
+    top: 110px;
+}
+
+.seatRow {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    position: relative;
+    bottom: 0;
+    z-index: 1;
+}
+
+.seatRow:nth-child(2) {
+    bottom: 55px;
+    z-index: 1;
+}
+
+.seatRow:nth-child(3) {
+    bottom: 110px;
+    z-index: 1;
+}
+
+.seatBlok:first-child {
+    margin-left: 25px;
+}
+
+.seatBlok {
+    min-width: 200px;
+    width: 200px;
+    max-width: 200px;
+    height: 175px;
+    position: relative;
+    margin-left: 25px;
+}
+
+.seatBack,
+.seatBack:before,
+.seatBack:after {
+    width: 100%;
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+    position: absolute;
+}
+
+.seatBack {
+    height: 90%;
+    bottom: 0 !important;
+}
+
+.seatBack:after {
+    content: '';
+    background: linear-gradient(90deg, rgb(116,12,13), rgb(109,15,16), rgb(116,12,13));
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.5);
+}
+
+.seatBack:before {
+    content: '';
+    background: linear-gradient(rgb(92,32,8),rgba(0,0,0,.1) 6%),
+    radial-gradient(rgb(20,6,5),rgb(5,1,0));
+    height: 96%;
+    top: 7%;
+    position: absolute;
+    z-index: 5;
+    border-top: 1px solid rgba(20,6,5,0.6);
+}
+
+.lineDetails,
+.lineDetails:before,
+.lineDetails:after {
+    height: 2px;
+    background: linear-gradient(90deg,
+    rgb(20,12,9),
+    rgb(43,22,21),
+    rgb(20,12,9),
+    rgb(43,22,21),
+    rgb(20,12,9));
+    position: absolute;
+    z-index: 9;
+    top: 45%;
+    border-top: 1px solid black;
+}
+
+.lineDetails {
+    width: calc(100% - 20px);
+    margin: 0 10px;
+}
+
+.lineDetails:before,
+.lineDetails:after {
+    content: '';
+    width: 100%;
+}
+
+.lineDetails:after {
+    top: 15px;
+}
+
+.lineDetails:before {
+    top: 30px;
+}
+
+.arm,
+.arm:before,
+.arm:after {
+    position: absolute;
+}
+
+.arm:before,
+.arm:after {
+    content: '';
+}
+
+.arm:after {
+    height: 101%;
+    width: 50%;
+    background: rgb(0,0,0);
+    bottom: 0;
+    margin: 0 20%;
+    z-index: -2;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+
+.arm:before {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(60,4,8,0.5), rgba(60,4,8,0.2), transparent, rgba(60,4,8,0.6), rgba(60,4,8,0.95)),
+    linear-gradient(rgb(116,12,13), rgb(80,15,16), rgb(60,4,8));
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    box-shadow: 0px -1px 1px rgba(0,0,0,0.6);
+}
+
+.arm {
+    width: 18%;
+    height: 76%;
+    left: -15%;
+    transform: rotate(1deg);
+    background: transparent;
+    bottom: -3.6%;
 }

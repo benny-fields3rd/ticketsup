@@ -4,36 +4,45 @@
 <head th:replace="partials::head('Orders')"></head>
 <body>
 <div th:replace="partials::navbar"></div>
+
 <div class="container">
-    <h3>List of all Orders</h3>
-    <form th:action="@{/}" class="sendQr" th:method="post" th:object="${user_orders}">
+    <h3 class="center-align">List of all Orders</h3>
+                            <form th:action="@{/}" class="sendQr" th:method="post" th:object="${user_orders}">
+        <div class="row">
+            <div class="col s12 l3" th:each="order : ${user_orders}">
+                <div class="card z-depth-5" >
 
-    <ul class="ordersLIst">
-        <li class="card" th:each="order : ${user_orders}">
-            <div class="card-body">
+                    <div class="card-panel center">
+                        <div class="card-title"><h5><span th:text="${order.getUser().getusername()}"></span></h5></div>
+                        <div><p class="card-title"><span th:text="${order.order_date}"></span></p></div>
 
-                <h5 class="card-title"><span th:text="${order.getUser().getusername()}"></span></h5>
-                <p class="card-text"><span th:text="${order.order_date}"></span></p>
+                        <img id='barcode'
+                             th:src="'https://api.qrserver.com/v1/create-qr-code/?data='+ ${order.id} +'&amp;size=100x100'"
+                             alt="qr code"
+                             th:title="${order.id}"
+                             width="130"
+                             height="130" />
+                        <input type="hidden" class="hiddenOrderNum" name="order.id" th:value="${order.getId()}" />
+                        <div class="card-action">
+                            <div class="row">
+                                <button class="btn" th:value="${order.id}" disabled="disabled" type="submit" >Resend </button>
+                            </div>
+                            <div class="row">
+                                <!--<form class="right" th:method="POST" th:action="'/orders/delete/' +${order.id}" >-->
 
-                <!--<form th:action="'/delete/' + ${order.id}" th:method="post" th:object="${user_orders}">-->
-                    <img id='barcode'
-                         th:src="'https://api.qrserver.com/v1/create-qr-code/?data='+ ${order.id} +'&amp;size=100x100'"
-                         alt=""
-                         th:title="${order.id}"
-                         width="50"
-                         height="50" />
-
-                    <button class="btn" th:value="${order.id}" type="submit" >Resend Receipt</button>
-                    <button class="btn" >Cancel Order</button>
-                <!--</form>-->
+                                    <button disabled="disabled" class="btn"  >
+                                        Delete
+                                    </button>
+                                <!--</form>/**/-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </li>
-    </ul>
+        </div>
     </form>
 
 </div><!-- /.container -->
 <div th:replace="partials::footer"></div>
-
-
 </body>
 </html>
