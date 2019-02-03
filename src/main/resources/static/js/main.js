@@ -29,9 +29,9 @@ $(document).ready(() => {
                         let imgLink = result.results[i].poster_path;
                         console.log(movieId);
 
-                        htmlForNowShowingMovies += `<div id="${movieId}" class="col s2  m4 l3 center-align singleMovie">
-                                    <img src='${imgPath + imgLink}'  class="imgPoster">
-                             <a class="  waves-effect waves-light btn movieBtn" >Book Movie</a>
+                        htmlForNowShowingMovies += `<div id="${movieId}" class="col s12  m6 l3 center-align singleMovie">
+                                    <img src='${imgPath + imgLink}'  class="imgPoster col s12">
+                             <a class="  waves-effect waves-light btn movieBtn col s8 offset-s2" >Book Movie</a>
                                 </div>
                         
                         `
@@ -59,7 +59,7 @@ $(document).ready(() => {
                     for (let i = 0 ; i < 15 ; i++){
 
                         let imgLink = result.results[i].poster_path;
-                        htmlForUpComingMovies += `<div  id="${result.results[i].id}" class="col s2 m4 l3">
+                        htmlForUpComingMovies += `<div  id="${result.results[i].id}" class="col s12  m6 l3">
                                     <img src='${imgPath + imgLink}'  class="imgPoster" />
                                     <a class="waves-effect waves-light  btn movieBtn"  >Movie Details</a>
                                 </div>
@@ -150,8 +150,8 @@ getMovie();
 
     //THIS IS FOR THE SELECT DATE OF THE MOVIE//
 
-   //  var date = $('#date');
-   //  var time = $('#movieTime');
+   //  let date = $('#date');
+   //  let time = $('#movieTime');
    //
    // if (date.val() == null && time.val() == null) {
    //  $('#btn1').removeAttr(disabled);
@@ -193,7 +193,7 @@ getMovie();
 
     //google sign in
     function onSignIn(googleUser) {
-        var profile = googleUser.getBasicProfile();
+        let profile = googleUser.getBasicProfile();
         console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
         console.log('Name: ' + profile.getName());
         console.log('Image URL: ' + profile.getImageUrl());
@@ -201,6 +201,43 @@ getMovie();
     }
 
 
+    // /seats index
 
+    function setSize(){
+        let curWindowWidth = window.innerWidth;
+        let seat = 200;
+        let numAvail = Math.round(curWindowWidth / 200);
+        let chair = $('.seatBlok');
+
+
+        for (i = 0; i < numAvail; i++) {
+            chair.clone().insertAfter(chair);
+        }
+
+
+        let resizeTimer;
+        $(window).resize(function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                function howMany(selectObject) {
+                    let numberSelected = 0;
+                    for (let i = 0; i < selectObject.options.length; i++) {
+                        if (selectObject.options[i].selected) {
+                            numberSelected++;
+                        }
+                    }
+                    return numberSelected;
+                }
+
+
+
+                chair.clone().insertAfter(chair);
+            }, 200);
+        });
+
+
+    }
+
+    $(document).ready(setSize);
 
 });
