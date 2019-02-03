@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Martel+Sans" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -29,15 +30,19 @@
 
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <div class="button-group" sec:authorize="!isFullyAuthenticated()">
-                    <li><a href="/aboutUs">INFO</a></li>
-                    <li><a href="/sign-up">SIGN UP </a></li>
-                    <li><a href="/login">LOGIN</a></li>
+                    <!--<li><a href="/aboutUs">INFO</a></li>-->
+                    <li><a href="/sign-up">  SIGN UP<i class="medium material-icons">edit</i> </a></li>
+                    <li><a href="/login">LOGIN<i class="medium material-icons">account_circle</i></a></li>
                 </div>
 
                 <div class="button-group" sec:authorize="isFullyAuthenticated()">
-                    <li><a href="/profile">PROFILE</a></li>
-                    <li><a href="/">ORDERS</a></li>
-                    <li><a href="/login?logout">LOGOUT </a></li>
+                    <li><a href="/profile">PROFILE<i class="medium material-icons">account_circle</i></a></li>
+                    <li><a href="/orders/user">ORDERS<i class="medium material-icons">local_offer</i></a></li>
+                    <li>
+                        <form th:action="@{/logout}" th:method="POST">
+                            <button id="logout">LOGOUT <i class="medium material-icons">wrap_text</i></button>
+                        </form>
+                        </li>
                 </div>
             </ul>
         </div>
