@@ -60,8 +60,8 @@ $(document).ready(() => {
 
                         let imgLink = result.results[i].poster_path;
                         htmlForUpComingMovies += `<div  id="${result.results[i].id}" class="col s12  m6 l3">
-                                    <img src='${imgPath + imgLink}'  class="imgPoster" />
-                                    <a class="waves-effect waves-light  btn movieBtn"  >Movie Details</a>
+                                    <img src='${imgPath + imgLink}'  class="imgPoster col s12" />
+                                    <a class="waves-effect waves-light  btn movieBtn col s8 offset-s2"  >Movie Details</a>
                                 </div>
                         `
 
