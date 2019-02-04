@@ -380,3 +380,7 @@ i.small {
     background: transparent;
     bottom: -3.6%;
 }
+
+form > div * {
+    font-size: x-large;
+}
