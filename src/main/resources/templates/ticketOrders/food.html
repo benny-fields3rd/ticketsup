@@ -23,7 +23,7 @@
                         <label>
                             <input type="checkbox" name="food" th:value="${food.id}" class="filled-in"/>
                             <span>Add to order</span>
-                            <large class="right" th:text="'$'+${#numbers.formatDecimal(food.price, 0, 2)}"></large>
+                            <strong class="right food-price" th:text="'$'+${#numbers.formatDecimal(food.price, 0, 2)}"></strong>
                         </label>
                     </div> <!-- closes card-action -->
                     </div> <!-- closes card -->
