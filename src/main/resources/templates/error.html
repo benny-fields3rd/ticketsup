@@ -4,12 +4,13 @@
 <head th:replace="partials::head('Uh Oh!')"></head>
 <body>
 <div th:replace="partials::navbar"></div>
-
+<main>
         <div class="errorImage">
             <img  id="screen" th:src="@{/img/errorScreen.jpg}" alt="error page on movie screen" />
             <h1 id="error-text"><span id="error-span">It's not you. It's us.<br/>Try again, please.</span></h1>
         </div>
 
         <div th:replace="partials::footer"></div>
+</main>
     </body>
 </html>

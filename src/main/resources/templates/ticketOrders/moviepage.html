@@ -6,7 +6,7 @@
     <div th:replace="partials::navbar"></div>
 
     <div id="moviePoster"></div>
-    <div class="container">
+    <main class="container">
         <!--//MOVIE CONTENT WILL BE DISPLAYED IN THIS CONTAINER//-->
         <form th:action="@{/order}" th:method="post" th:object="${order}">
             <div class="row">
@@ -54,7 +54,7 @@
             </div>
         </form>
 
-    </div>
+    </main>
     <br/>
     <br/>
 

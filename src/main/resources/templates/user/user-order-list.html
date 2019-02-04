@@ -4,7 +4,7 @@
 <head th:replace="partials::head('Orders')"></head>
 <body>
 <div th:replace="partials::navbar"></div>
-
+<main>
 <div class="container">
     <h3 class="center-align">List of all Orders</h3>
                             <form th:action="@{/}" class="sendQr" th:method="post" th:object="${user_orders}">
@@ -43,6 +43,7 @@
     </form>
 
 </div><!-- /.container -->
+</main>
 <div th:replace="partials::footer"></div>
 </body>
 </html>
