@@ -387,4 +387,8 @@ form > div * {
 
 #welcome {
     font-size: 40px;
+
+.sign-up{
+    padding: 0 24px;
+
 }
