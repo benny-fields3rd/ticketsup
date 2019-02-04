@@ -8,8 +8,8 @@
 <div class="container">
     <div class="row">
         <div class="card z-depth-5">
-            <div class="card-body">
-                <h3 class="card-title">Welcome <span th:text="${user.first_name}"></span>, to Your Profile</h3>
+            <div class="card-content">
+                <span id="welcome" class="card-title">Welcome <span th:text="${user.first_name}"></span>, to Your Profile!</span>
                     <form class="card-text" th:action="@{/profile}" method="post" th:object="${user}">
                             <div class="row">
                             <label id="profile">First Name: <span class="title" th:text="${user.first_name}"></span></label>

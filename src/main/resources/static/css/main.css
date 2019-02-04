@@ -384,3 +384,7 @@ i.small {
 form > div * {
     font-size: x-large;
 }
+
+#welcome {
+    font-size: 40px;
+}
