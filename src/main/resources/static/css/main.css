@@ -107,7 +107,6 @@ h3 {
     background-color: var(--charcoal-color);
     color: var(--light--color);
 }
-
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
     color: #D44F54;
     margin: 10px;
@@ -382,6 +381,14 @@ i.small {
     bottom: -3.6%;
 }
 
+form > div * {
+    font-size: x-large;
+}
+
+#welcome {
+    font-size: 40px;
+
 .sign-up{
     padding: 0 24px;
+
 }
