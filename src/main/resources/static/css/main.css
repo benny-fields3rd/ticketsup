@@ -382,11 +382,12 @@ i.small {
 }
 
 form > div * {
-    font-size: x-large;
+    font-size: 11px;
 }
 
 #welcome {
     font-size: 40px;
+}
 
 .sign-up{
     padding: 0 24px;
