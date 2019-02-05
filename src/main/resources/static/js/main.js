@@ -11,18 +11,10 @@ $(document).ready(() => {
                 url : "https://api.themoviedb.org/3/trending/movie/week?api_key="+ apiKey,
                 type : "get",
                 success : function (result) {
-                    // let firstPoster = result.results[0].backdrop_path ;
-                    // let secPoster = result.results[1].backdrop_path ;
-                    // let thirdPoster = result.results[2].backdrop_path ;
-                    //
-                    // $('#firstPoster').attr("src", imgPath + firstPoster);
-                    //
-                    // $('#secPoster').attr("src", imgPath + secPoster);
-                    //
-                    // $('#thirdPoster').attr("src", imgPath + thirdPoster);
+
 
                     let htmlForNowShowingMovies = `<div class="row nowShowing">`;
-                    for (let i = 0 ; i < 15 ; i++){
+                    for (let i = 0 ; i < 16 ; i++){
                         let movieId = result.results[i].id;
                         let imgLink = result.results[i].poster_path;
                         console.log(movieId);
@@ -47,7 +39,7 @@ $(document).ready(() => {
                 success : function (result) {
                     let htmlForUpComingMovies = `<div class="row nowShowing">`;
 
-                    for (let i = 0 ; i < 15 ; i++){
+                    for (let i = 0 ; i < 16 ; i++){
 
                         let imgLink = result.results[i].poster_path;
                         htmlForUpComingMovies += `<div  id="${result.results[i].id}" class="col s12  m6 l3 center-align singleMovie">
@@ -97,10 +89,11 @@ function getMovie() {
              <div class="container miniMovie" style="height: 100%">
                <div class="row">
 
-                        <div class="col s4">
+                        <div class="col s6 offset-s3">
+                        <div class="col s6">
                             <img src='${imgPathSmall + imgLink}' style="    height: 170px;" id="imgPoster" />
                         </div>
-                        <div class="col s8">
+                        <div class="col s6">
                         <h5>${results.title}</h5>
 
                         <ul id="movieInfo" class="list-group">
@@ -109,7 +102,7 @@ function getMovie() {
                           <li class="list-group-item"><strong>Rated:</strong> ${results.vote_average}</li>
                          
                         </ul>
-                       
+                       </div>
                     </div>
                 </div>
 
