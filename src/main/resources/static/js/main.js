@@ -170,7 +170,7 @@ getMovie();
 
         });
 
-        let orderTotal = (parseInt(ticketsTotal) * 7) + totalFoodPrice;
+        let orderTotal = (parseFloat(ticketsTotal) * 7) + totalFoodPrice;
         console.log(orderTotal);
         $("#total").text(orderTotal);
     }
