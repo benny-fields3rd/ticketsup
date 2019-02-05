@@ -13,7 +13,7 @@
                 <div class="card z-depth-5" >
 
                     <div class="card-panel center">
-                        <div class="card-title"><h5><span th:text="${order.getUser().getusername()}"></span></h5></div>
+                        <div class="card-title"><h5><span th:text="${order.getUser().getusername().toUpperCase()}"></span></h5></div>
                         <div><p class="card-title"><span th:text="${order.order_date}"></span></p></div>
 
                         <img id='barcode'
