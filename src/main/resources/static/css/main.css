@@ -410,3 +410,7 @@ i.small {
 .profileInfo{
     color: var(--redch-color); !important;
 }
+
+.us-photo {
+    color: var(--redch-color);
+}
