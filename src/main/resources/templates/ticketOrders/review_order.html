@@ -20,22 +20,22 @@
                 <thead>
                 <tr>
                     <th>Item Name</th>
-                    <th>Item Price</th>
                     <th>Quantity</th>
+                    <th>Item Price</th>
                 </tr>
                 </thead>
 
                 <tbody>
                 <tr>
                     <td>Tickets</td>
-                    <td>$7.00</td>
                     <td class="ticketsTotal" th:text="${order.total_tickets}"></td>
+                    <td>$7.00</td>
                 </tr>
                 <div th:each="food : ${orderFood}" class="col s1">
                     <tr>
                         <td th:text="${food.name}"></td>
-                        <td class="foodPrice" th:text="'$'+${#numbers.formatDecimal(food.price, 0, 2)}"></td>
                         <td>1</td>
+                        <td class="foodPrice" th:text="'$'+${#numbers.formatDecimal(food.price, 0, 2)}"></td>
                     </tr>
                 </div>
                 <tr>
