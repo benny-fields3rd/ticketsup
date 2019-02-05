@@ -16,8 +16,7 @@
                             <th>Movie Date</th>
                             <th>Amount</th>
                             <th>Status</th>
-                            <th> </th>
-
+                            <th>Progress</th>
                         </tr>
                     </thead>
 
@@ -31,8 +30,8 @@
                                 <td th:text="${order.getStatus().status}"></td>
                                 <td width="250px">
                                     <div th:if="${order.getStatus().getId() == 1}" class="progress">
-                                    <div class="determinate" style="width: 40%"></div>
-                                     </div>
+                                        <div class="determinate" style="width: 40%"></div>
+                                    </div>
                                     <div th:if="${order.getStatus().getId() == 2}" class="progress">
                                         <div class="determinate" style="width: 60%"></div>
                                     </div>
@@ -43,7 +42,6 @@
                                         <div class="determinate" style="width: 100%"></div>
                                     </div>
                                 </td>
-
                             </tr>
                         </div>
                     </tbody>
