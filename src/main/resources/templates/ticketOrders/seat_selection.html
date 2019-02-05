@@ -22,12 +22,13 @@
 
         <div class="col s8 offset-s2">
 
-        <div th:each="seat : ${seats}" class="col l1 m2 s2 ">
+        <div th:each="seat : ${seats}" class="col s2">
             <div class="seat">
 
             <label>
                 <input type="checkbox" name="seats" th:value="${seat.id}" class="filled-in" />
-                <span th:text="${seat.name}"></span>
+                <span style="
+    padding-left: 46px" th:text="${seat.name}"></span>
             </label>
             </div>
         </div>
