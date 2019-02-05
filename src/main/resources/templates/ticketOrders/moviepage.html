@@ -23,9 +23,12 @@
         <h4>SELECT SHOWTIME</h4>
         <div class="row">
 
-            <div id="datePicker" class="col s12 l4">
-                <!--CALENDER AND DATE WILL SHOW UP HERE-->
-                <input th:field="*{order_date}" type="text" placeholder="Select Date" class="datepicker" />
+            <!--<div id="datePicker" class="col">-->
+                <!--&lt;!&ndash;CALENDER AND DATE WILL SHOW UP HERE&ndash;&gt;-->
+                <!--<input th:field="*{order_date}" type="text" placeholder="Select Date" class="datepicker" />-->
+            <!--</div>-->
+            <div class="input-field col s12 l4">
+                <input placeholder="Select Date" type="text" class="datepicker" th:field="*{order_date}"/>
             </div>
             <div class="input-field col s12 l4">
                 <select id="movieTime" th:field="*{movie_time}">
