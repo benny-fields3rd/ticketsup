@@ -25,6 +25,8 @@
             <div id="datePicker" class="input-field col s12 l4">
                 <!--CALENDER AND DATE WILL SHOW UP HERE-->
                 <input th:field="*{order_date}" type="text" placeholder="Select Date" class="datepicker" />
+            <div class="input-field col s12 l4">
+                <input placeholder="Select Date" type="text" class="datepicker" th:field="*{order_date}"/>
             </div>
             <div class="input-field col s12 l4">
                 <select id="movieTime" th:field="*{movie_time}">
