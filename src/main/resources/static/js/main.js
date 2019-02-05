@@ -29,9 +29,9 @@ $(document).ready(() => {
                         let imgLink = result.results[i].poster_path;
                         console.log(movieId);
 
-                        htmlForNowShowingMovies += `<div id="${movieId}" class="col s12  m6 l3 center-align singleMovie">
+                        htmlForNowShowingMovies += `<div id="${movieId}" class="col s12  m6 l3 center-align singleMovie hoverable">
                                     <img src='${imgPath + imgLink}'  class="imgPoster col s12">
-                             <a class="  waves-effect waves-light btn movieBtn col s8 offset-s2" >Book Movie</a>
+                             <a class="  waves-effect waves-light btn movieBtn col s8 offset-s2" style="margin-top: 5px">Book Movie</a>
                                 </div>
                         
                         `
@@ -59,9 +59,9 @@ $(document).ready(() => {
                     for (let i = 0 ; i < 15 ; i++){
 
                         let imgLink = result.results[i].poster_path;
-                        htmlForUpComingMovies += `<div  id="${result.results[i].id}" class="col s12  m6 l3">
+                        htmlForUpComingMovies += `<div  id="${result.results[i].id}" class="col s12  m6 l3 hoverable">
                                     <img src='${imgPath + imgLink}'  class="imgPoster col s12" />
-                                    <a class="waves-effect waves-light  btn movieBtn col s8 offset-s2"  >Movie Details</a>
+                                    <a class="waves-effect waves-light  btn movieBtn col s8 offset-s2 " style="margin-top: 5px" >Movie Details</a>
                                 </div>
                         `
 

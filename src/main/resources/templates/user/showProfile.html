@@ -46,6 +46,45 @@
 
 
 </main>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+        <div class="card z-depth-5">
+            <div class="card-content">
+                <span class="card-title">
+                    <h1><span id="welcome">Welcome <span th:text="${user.first_name}"></span>, to Your Profile!</span></h1>
+                </span>
+                    <form class="card-text" th:action="@{/profile}" method="post" th:object="${user}">
+                            <div class="row">
+                            <label id="profile">First Name: <span class="title" th:text="${user.first_name}"></span></label>
+                            </div>
+                            <div class="row">
+                            <label>Last Name: <span class="title" th:text="${user.last_name}"></span></label>
+                            </div>
+                            <div class="row">
+                            <label>Phone Number: <span class="title" th:text="${user.phone}"></span></label>
+                            </div>
+                            <div class="row">
+                            <label>Email: <span class="title" th:text="${user.email}"></span></label>
+                            </div>
+                            <div class="row">
+                            <label>Zip Code: <span class="title" th:text="${user.zip_code}"></span></label>
+                            </div>
+                            <div class="row">
+                            <label>Username: <span class="title" th:text="${user.getusername()}"></span></label>
+                            </div>
+                            <!--<div class="row">-->
+                            <!--<label>Password: <span class="title" th:text="${user.password}"></span></label>-->
+                            <!--</div>-->
+                            <div>
+                                <a class="waves-effect waves-light btn" th:href="@{/editUser}">Edit Profile</a>
+                            </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 <div th:replace="partials :: footer"></div>
 
 </body>
