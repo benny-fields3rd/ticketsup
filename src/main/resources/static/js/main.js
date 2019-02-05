@@ -151,6 +151,10 @@ getMovie();
         $('select').formSelect();
     });
 
+    $(document).ready(function(){
+        $('.sidenav').sidenav();
+    });
+
     function totalCal() {
 
         let ticketsTotal = $(".ticketsTotal").text();
