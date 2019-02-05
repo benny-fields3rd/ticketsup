@@ -15,17 +15,14 @@
     <!--//MOVIE CONTENT WILL BE DISPLAYED IN THIS CONTAINER//-->
     <form th:action="@{/order}" th:method="post" th:object="${order}">
         <div class="row">
-            <div id="movie" class="well col s12">
-            </div>
+            <div id="movie" class="well col s12"></div>
             <input type="hidden" name="movies_id" th:value="${movies_id}"/>
         </div>
 
         <h4>SELECT SHOWTIME</h4>
         <div class="row">
-            <div id="datePicker" class="input-field col s12 l4">
-                <!--CALENDER AND DATE WILL SHOW UP HERE-->
-                <input th:field="*{order_date}" type="text" placeholder="Select Date" class="datepicker" />
             <div class="input-field col s12 l4">
+                <!--CALENDER AND DATE WILL SHOW UP HERE-->
                 <input placeholder="Select Date" type="text" class="datepicker" th:field="*{order_date}"/>
             </div>
             <div class="input-field col s12 l4">
@@ -52,12 +49,12 @@
                 </select>
                 <label>Please select amount:<medium> $7.00 each</medium> </label>
             </div>
-        </div><!--CLOSES SECOND ROW-->
         <div class="row">
             <div class="col 12" id="singleBtn">
                 <button id="btn1" class="btn waves-effect waves-light right" type="submit" >SELECT SEATS</button>
             </div>
         </div>
+        </div><!--CLOSES SECOND ROW-->
     </form>
     </div>
 </main>
