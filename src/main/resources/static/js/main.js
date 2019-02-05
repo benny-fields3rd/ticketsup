@@ -105,10 +105,10 @@ function getMovie() {
                        </div>
                     </div>
                 </div>
-
+                </div>
             </div>
 
-          </div>`;
+        `;
 
             let output = `
        
