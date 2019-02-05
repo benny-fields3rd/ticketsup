@@ -407,3 +407,6 @@ i.small {
 .food-price {
     font-size: larger;
 }
+.profileInfo{
+    color: var(--redch-color); !important;
+}
