@@ -27,7 +27,9 @@
 
 </head>
 <body  id="top" >
-    <nav th:fragment="navbar">
+    <div th:fragment="navbar">
+        <nav>
+
         <div class="nav-wrapper blue-grey darken-3">
             <a href="/" class="brand-logo"><img height="60" src="/img/ticketups-LOGO-NAME.png" />
             </a>
@@ -52,7 +54,27 @@
                 </div>
             </ul>
         </div>
-    </nav>
+        </nav>
+        <ul class="sidenav" id="mobile-demo">
+            <div class="button-group" sec:authorize="!isFullyAuthenticated()">
+                <!--<li><a href="/aboutUs">INFO</a></li>-->
+                <li><a href="/sign-up">  SIGN UP<i class="medium material-icons">edit</i> </a></li>
+                <li><a href="/login">LOGIN<i class="medium material-icons">account_circle</i></a></li>
+            </div>
+
+            <div class="button-group" sec:authorize="isFullyAuthenticated()">
+                <li><a href="/profile">PROFILE<i class="medium material-icons">account_circle</i></a></li>
+                <li><a href="/orders/user">ORDERS<i class="medium material-icons">local_offer</i></a></li>
+                <li>
+                    <form th:action="@{/logout}" th:method="POST">
+                        <button id="">LOGOUT <i class="medium material-icons">wrap_text</i></button>
+                    </form>
+                </li>
+            </div>
+        </ul>
+
+
+    </div>
 
     <footer th:fragment="footer" class="page-footer blue-grey darken-3">
         <div class="container">
