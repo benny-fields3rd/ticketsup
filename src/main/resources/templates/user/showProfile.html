@@ -5,6 +5,47 @@
 <body>
 
 <div th:replace="partials :: navbar"></div>
+<main>
+
+<form th:action="@{/profile}" method="post" th:object="${user}">
+    <h2>Welcome to Your Profile</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col 12">
+                    <p>
+                        First Name: <span class="title" th:text="${user.first_name}"></span>
+                    </p>
+
+                    <p>
+                        Last Name: <span class="title" th:text="${user.last_name}"></span>
+                    </p>
+
+                    <p>
+                        Username: <span class="title" th:text="${user.getusername()}"></span>
+                    </p>
+
+                    <p>
+                        Email: <span th:text="${user.email}"></span>
+                    </p>
+
+                    <p>
+                        Phone Number: <span th:text="${user.phone}"></span>
+                    </p>
+
+                    <p>
+                        Zip Code: <span th:text="${user.zip_code}"></span>
+                    </p>
+
+                    <div>
+                        <a class="waves-effect waves-light btn" th:href="@{/editUser}">Edit Profile</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+</main>
 <div class="container">
     <div class="row">
         <div class="col s12">
