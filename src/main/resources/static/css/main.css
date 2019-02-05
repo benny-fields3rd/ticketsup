@@ -15,6 +15,8 @@ body , html{
 
 main {
     flex: 1 0 auto;
+    background-color: var(--light--color);
+    /*background-color: white;*/
 }
 
 nav ul a {
@@ -30,7 +32,7 @@ h3 {
 }
 .card {
     overflow: visible;
-    background-color: var(--light--color);
+    background-color: white;
 }
 
 .card-title {
@@ -73,6 +75,7 @@ h3 {
 
 #screen {
     width: 100%;
+    margin-bottom: 1em;
 }
 
 #error-text {
@@ -115,7 +118,6 @@ h3 {
     background-color: var(--charcoal-color);
     color: var(--light--color);
 }
-
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
     color: #D44F54;
     margin: 10px;
@@ -388,4 +390,18 @@ i.small {
     transform: rotate(1deg);
     background: transparent;
     bottom: -3.6%;
+}
+
+
+#welcome {
+    font-size: 40px;
+}
+
+.sign-up{
+    padding: 0 24px;
+
+}
+
+.food-price {
+    font-size: larger;
 }

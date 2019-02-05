@@ -1,9 +1,7 @@
-
 $(document).ready(() => {
 
     $('.slider').slider();
     $('.tabs').tabs();
-
 
     const imgPath ="https://image.tmdb.org/t/p/w200";
 
@@ -28,14 +26,11 @@ $(document).ready(() => {
                         let movieId = result.results[i].id;
                         let imgLink = result.results[i].poster_path;
                         console.log(movieId);
-
                         htmlForNowShowingMovies += `<div id="${movieId}" class="col s12  m6 l3 center-align singleMovie">
                                     <img src='${imgPath + imgLink}'  class="imgPoster col s12">
-                             <a class="  waves-effect waves-light btn movieBtn col s8 offset-s2" >Book Movie</a>
+                                    <a class="waves-effect waves-light btn movieBtn col s8 offset-s2" style="margin-top: 5px">Book Movie</a>
                                 </div>
-                        
                         `
-
                     }
                     htmlForNowShowingMovies += `</div>`;
                     $("#test-swipe-1").append(htmlForNowShowingMovies);
@@ -44,11 +39,7 @@ $(document).ready(() => {
                     console.log("Error ${er}");
                 }
             })
-
-
         }
-
-
         function getUpcomingMovie(){
             $.ajax({
                 url : "https://api.themoviedb.org/3/movie/upcoming?api_key="+ apiKey,
@@ -59,16 +50,14 @@ $(document).ready(() => {
                     for (let i = 0 ; i < 15 ; i++){
 
                         let imgLink = result.results[i].poster_path;
-                        htmlForUpComingMovies += `<div  id="${result.results[i].id}" class="col s12  m6 l3">
-                                    <img src='${imgPath + imgLink}'  class="imgPoster col s12" />
-                                    <a class="waves-effect waves-light  btn movieBtn col s8 offset-s2"  >Movie Details</a>
+                        htmlForUpComingMovies += `<div  id="${result.results[i].id}" class="col s12  m6 l3 center-align singleMovie">
+                                    <img src='${imgPath + imgLink}'  class="imgPoster col s12 " />
+                                    <a class="waves-effect waves-light  btn movieBtn col s8 offset-s2 " style="margin-top: 5px" >Movie Details</a>
                                 </div>
                         `
-
                     }
                     htmlForUpComingMovies += `</div>`;
                     $("#test-swipe-2").append(htmlForUpComingMovies);
-
                 },
                 error : function (er) {
                     console.log("Error ${er}");
