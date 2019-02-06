@@ -178,10 +178,23 @@ h4{
     border: 2px solid transparent;
 
 }
+#seatName{
+    padding-left: 46px;
+}
 .seatSection [type="checkbox"]+span:not(.lever){
     height: 50px;
     color: #731a14;
     font-size: 1.125em;
+}
+@media screen and (max-width: 450px) {
+    .seatSection [type="checkbox"]+span:not(.lever){
+        height: 50px;
+        color: #e4e4e4;
+        font-size: 1.125em;
+    }
+    #seatName{
+        padding-left: 18px;
+    }
 }
 .seatSection{
     margin-top: 50px;
