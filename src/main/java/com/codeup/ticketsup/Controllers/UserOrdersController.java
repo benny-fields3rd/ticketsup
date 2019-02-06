@@ -5,6 +5,7 @@ import com.codeup.ticketsup.interfaces.OrderRepository;
 import com.codeup.ticketsup.interfaces.SeatsRepository;
 import com.codeup.ticketsup.interfaces.UserRepository;
 
+import com.codeup.ticketsup.models.Food;
 import com.codeup.ticketsup.models.Order;
 import com.codeup.ticketsup.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 public class UserOrdersController {
@@ -36,6 +39,7 @@ public class UserOrdersController {
     @PostMapping("/orders/delete/{id}")
     public String deleteOrder(@PathVariable int id){
         Order order = orderRepository.findOne(id);
+
         foodRepository.delete(order.getFood());
         seatsRepository.delete(order.getSeats());
         orderRepository.delete(order);
