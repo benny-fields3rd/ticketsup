@@ -418,3 +418,9 @@ i.small {
 /*.order-review {*/
     /*float: right;*/
 /*}*/
+
+.social-links{
+    font-size: 4rem;
+    color: var(--redch-color);
+
+}
