@@ -6,7 +6,7 @@ Ticketsup is both a movie and food booking application that was developed by thr
 Ticketsup was created to be a user-friendly web application to help the customer skip the lines at the movie theater. A user can order their movie tickets and food ahead of time. Once they arrive at the theater, the food is then prepared once the user scans in using a qr code sent by Ticketsup. 
 
 ## Tech/framework used
-###Built with
+### Built with
 * [Materialize CSS](https://materializecss.com/) - CSS Library
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Spring Boot](https://spring.io/projects/spring-boot) - Framework used
