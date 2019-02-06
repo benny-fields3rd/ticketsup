@@ -89,11 +89,11 @@ function getMovie() {
              <div class="container miniMovie" style="height: 100%">
                <div class="row">
 
-                        <div class="col s6 offset-s3">
-                        <div class="col s6">
+                        <div class="col l6 offset-l3 s8 offset-s2">
+                        <div class="col l6 hide-on-small-only	">
                             <img src='${imgPathSmall + imgLink}' style="    height: 170px;" id="imgPoster" />
                         </div>
-                        <div class="col s6">
+                        <div class="col l6 s12">
                         <h5>${results.title}</h5>
 
                         <ul id="movieInfo" class="list-group">
