@@ -7,6 +7,7 @@ Ticketsup was created to be a user-friendly web application to help the customer
 
 ## Tech/framework used
 ###Built with
+* [Materialize CSS](https://materializecss.com/) - CSS Library
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Spring Boot](https://spring.io/projects/spring-boot) - Framework used
 * [Stripe](https://stripe.com/get-started?&utm_campaign=paid_brand&utm_medium=cpc&utm_source=google&ad_content=272694926138&utm_term=stripe%20api&utm_matchtype=e&utm_adposition1t1&utm_device=c&gclid=CjwKCAiAqOriBRAfEiwAEb9oXVEwys0Q352Jn9ugKlCGp1fF4ADmvM-WFZVVGmkpB579DokFDcvXkhoC-m8QAvD_BwE)- Payment Processing API
