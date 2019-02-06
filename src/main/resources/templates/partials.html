@@ -5,6 +5,7 @@
     <title th:text="${title}"></title>
 
     <meta name="google-signin-client_id" content="462926050526-fkrncn6j0n50alprf71g3i6k2adle3s3.apps.googleusercontent.com"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 
     <link rel="icon" href="/img/ticketups logo.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -55,17 +56,16 @@
             </ul>
         </div>
         </nav>
-        <ul class="sidenav" id="mobile-demo">
-            <div class="button-group" sec:authorize="!isFullyAuthenticated()">
-                <!--<li><a href="/aboutUs">INFO</a></li>-->
-                <li><i class="medium material-icons">edit</i><a href="/sign-up"> SIGN UP</a></li>
-                <li><a href="/login"><i class="medium material-icons">account_circle</i> LOGIN</a></li>
+        <ul class="sidenav row" id="mobile-demo">
+            <div class="button-group col s8 offset-s2" sec:authorize="!isFullyAuthenticated()">
+                <li class="col s12"><a class="col s12" href="/sign-up"> <i class="medium material-icons">edit</i>SIGN UP</a></li>
+                <li class="col s12"><a class="col s12" href="/login"><i class="medium material-icons">account_circle</i> LOGIN</a></li>
             </div>
 
-            <div class="button-group" sec:authorize="isFullyAuthenticated()">
-                <li><a href="/profile"><i class="medium material-icons">account_circle</i> PROFILE</a></li>
-                <li><a href="/orders/user"><i class="medium material-icons">local_offer</i> ORDERS</a></li>
-                <li>
+            <div class="button-group col s8 offset-s2" sec:authorize="isFullyAuthenticated()">
+                <li class="col s12"><a class="col s12" href="/profile"><i class="medium material-icons">account_circle</i> PROFILE</a></li>
+                <li class="col s12"><a class="col s12" href="/orders/user"><i class="medium material-icons">local_offer</i> ORDERS</a></li>
+                <li class="col s12" >
                     <form th:action="@{/logout}" th:method="POST">
                         <button id=""><i class="medium material-icons">wrap_text</i>LOGOUT </button>
                     </form>
