@@ -1,5 +1,5 @@
 # Ticketsup
-Ticketsup is a full stack, web application that was built on the model view controller patter. 
+Ticketsup is a full stack, web application that was built on the model view controller pattern. 
 Ticketsup is both a movie and food booking application that was developed by three Codeup students for a capstone project.
 
 ## Motivation
@@ -26,4 +26,4 @@ Ticketsup was created to be a user-friendly web application to help the customer
 
 ## Credits
 Special thanks to the entire staff at Codeup for giving us the basic tools necessary to create this project.
-The past four and a half months have been truly an amazing experience! 
+The past four and a half months have been truly an amazing experience and our team is truly grateful! 
