@@ -425,3 +425,7 @@ i.small {
     font-size: x-large;
     font-weight: bold;
 }
+
+nav .nav-wrapper {
+    height: 111%;
+}
