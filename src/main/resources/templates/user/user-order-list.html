@@ -28,7 +28,7 @@
                                 <button class="btn" th:value="${order.id}" type="submit" >Resend </button>
                             </div>
                             <div class="row">
-                                <form class="right" th:method="POST" th:action="'/orders/delete/' +${order.id}" >
+                                <form  th:method="POST" th:action="'/orders/delete/' +${order.id}" >
 
                                     <button class="btn"  >
                                         Delete
