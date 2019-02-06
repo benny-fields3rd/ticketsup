@@ -8,9 +8,14 @@
 <main class="container">
         <!-- Need to add movie title, seat numbers/name -->
     <div class="row">
-        <div class="col s6 offset-s3">
+        <div class="col l6 offset-l3 s12">
             <div class="card z-depth-5">
-                <div class="card-content checkoutCard">
+                <div class="card-content checkoutCard col s12" style="
+                                            padding: 0;
+                                            position: relative;
+                                            left: -10px;
+                                        ">
+
                     <span class="card-title">
                         <h1 class="center-align">Review Order</h1></span>
     <form th:action="@{/orderSubmited}" class="formSendEmail" th:method="post" th:object="${order}">
@@ -18,7 +23,7 @@
 
         <!--<input  id="QrHidden" name="order_id" th:value="'https://api.qrserver.com/v1/create-qr-code/?data='+ ${order_id} +'&amp;size=100x100'"/>-->
 
-        <table class="responsive-table">
+        <table class="table">
                 <thead>
                 <tr>
                     <th class="left-align">Item Name</th>
